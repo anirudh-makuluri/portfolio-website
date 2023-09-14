@@ -1,0 +1,2 @@
+Hello, I'm <strong>Anirudh Makuluri</strong>, <br/> a <strong>Full-Stack Developer</strong> with more than <strong>one year</strong> of experience. I specialize in building dynamic websites using <strong>React</strong>, particularly <strong>Next.js</strong>,
+and crafting mobile applications with expertise in <strong>React Native</strong>.
