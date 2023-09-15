@@ -20,7 +20,7 @@ export default function Intro() {
       id="home"
       className="mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem]"
     >
-      {/* <div className="flex items-center justify-center">
+      <div className="flex items-center justify-center">
         <div className="relative">
           <motion.div
             initial={{ opacity: 0, scale: 0 }}
@@ -31,13 +31,13 @@ export default function Intro() {
             }}
           >
             <Image
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fit=crop&w=368&h=368&q=100"
+              src="/../public/bitmoji.png"
               alt="Anirudh portrait"
               width="192"
               height="192"
               quality="95"
               priority={true}
-              className="h-24 w-24 rounded-full object-cover border-[0.35rem] border-white shadow-xl"
+              className="h-24 w-24 rounded-full object-cover shadow-xl"
             />
           </motion.div>
 
@@ -55,7 +55,7 @@ export default function Intro() {
             👋
           </motion.span>
         </div>
-      </div> */}
+      </div>
 
       <motion.h1
         className="mb-10 mt-4 px-4 text-xl font-medium !leading-[1.5] sm:text-4xl"
