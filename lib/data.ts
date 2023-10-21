@@ -2,7 +2,8 @@ import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
 import { LuGraduationCap } from "react-icons/lu";
 import lexiguessImg from "@/public/lexiguess.png";
-import shardingsImg from "@/public/shardings.png"
+import shardingsImg from "@/public/shardings.png";
+import codecraftImg from "@/public/codecraft.png"
 
 export const links = [
   {
@@ -75,7 +76,7 @@ export const projectsData = [
     title: "LexiGuess",
     description:
       "LexiGuess is an engaging word-guessing website with three game modes and customizable word settings. It offers educational word meanings in \"Hard Word\" mode.",
-    tags: ["React", "Next.js", "Redis", "Tailwind CSS"],
+    tags: ["Next.js", "Tailwind CSS"],
     imageUrl: lexiguessImg,
     link: "https://lexiguess.vercel.app/"
   },
@@ -86,6 +87,13 @@ export const projectsData = [
     tags: ["Java", "Android Development", "Firebase"],
     imageUrl: "",
     link: "https://github.com/Arm8tron/ecommerce"
+  },
+  {
+    title: "CodeCraft",
+    description: "Real-time web design platform allowing direct HTML, CSS, and JS editing. Features seamless Shadcn and Tailwind CSS integration for responsive interfaces. Utilizes JWT for user authentication.",
+    tags: ["Next.js", ".Net", "MSSQL"],
+    imageUrl: codecraftImg,
+    link: "https://github.com/Arm8tron/code-craft/"
   }
 ] as const;
 
@@ -99,7 +107,8 @@ export const skillsData = [
   "Next.js",
   "Tailwind CSS",
   "Firebase",
-  "Redis",
+  "MSSQL",
+  ".Net",
   "Google Cloud Platform",
   "Oracle Cloud Infrastructure",
   "Socket.IO",
