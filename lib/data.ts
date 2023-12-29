@@ -86,14 +86,14 @@ export const projectsData = [
       "In my third year, I designed and developed a feature-rich e-commerce Android app using Java, showcasing strong object-oriented programming skills. I created an intuitive UI, implemented secure user authentication, and collaborated effectively with a team for planning, and development.",
     tags: ["Java", "Android Development", "Firebase"],
     imageUrl: "",
-    link: "https://github.com/Arm8tron/ecommerce"
+    link: "https://github.com/anirudh-makuluri/ecommerce"
   },
   {
     title: "CodeCraft",
     description: "Real-time web design platform allowing direct HTML, CSS, and JS editing. Features seamless Shadcn and Tailwind CSS integration for responsive interfaces. Utilizes JWT for user authentication.",
     tags: ["Next.js", ".Net", "MSSQL"],
     imageUrl: codecraftImg,
-    link: "https://github.com/Arm8tron/code-craft/"
+    link: "https://github.com/anirudh-makuluri/code-craft/"
   }
 ] as const;
 
