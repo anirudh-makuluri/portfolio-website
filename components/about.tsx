@@ -20,8 +20,9 @@ export default function About() {
       <SectionHeading>About me</SectionHeading>
       <p className="mb-3">
             As a graduate from <strong>BITS Pilani</strong> in <strong>2022</strong> with a major in <strong>Electronics and Instrumentation</strong>, 
-            I'm passionate about technology and proficient in <strong>React, Next.js, and React Native</strong>. I'm also familiar with <strong>Java and C#</strong>. 
-            I'm currently seeking a position where I can apply my skills and expertise to create innovative digital solutions that make a real impact.
+            I'm passionate about technology and proficient in <strong>React, Next.js, and React Native</strong>. I'm also familiar with <strong>Java and C#</strong>.
+			I have fundamental knowledge in <strong>Machine Learning</strong> and would like to go further into that field. <br></br>
+            I'm currently pursuing my Masters in Computer Science at <strong>Arizona State University</strong>.
       </p>
     </motion.section>
   );

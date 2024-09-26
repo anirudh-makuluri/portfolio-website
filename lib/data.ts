@@ -1,6 +1,6 @@
 import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
-import { LuGraduationCap } from "react-icons/lu";
+import { LuGraduationCap, LuBook } from "react-icons/lu";
 import lexiguessImg from "@/public/lexiguess.png";
 import shardingsImg from "@/public/shardings.png";
 import codecraftImg from "@/public/codecraft.png"
@@ -60,7 +60,14 @@ export const experiencesData = [
         "I worked as a software engineer for Shardings for 1 year. I was responsible for maintaining both the front end and back end. ",
         icon: React.createElement(CgWorkAlt),
         date: "June 2022 - August 2023",
-    }
+    },
+	{
+		title: "M.S Computer Science",
+		location: "Tempe, USA",
+		description: "Pursuing my Masters in Computer Science at Arizona State University",
+		icon: React.createElement(LuBook),
+		date: "August 2024 - Present"
+	}
 ] as const;
 
 export const projectsData = [
@@ -137,5 +144,13 @@ export const certificatesData = [
         link: "https://www.freecodecamp.org/certification/Anirudh_Makuluri/foundational-c-sharp-with-microsoft",
         badge: "/free_code_camp_logo.jpeg",
         description: "This certificate was a fantastic introduction to the world of C#. I learned how to create my first C# app, code simple applications, create methods, add logic, work with variable data, and even debug C# apps. It laid a strong foundation for my C# journey."
-    }
+    },
+	{
+		name: "Machine Learning Specialization",
+		issuedBy: "DeepLearning.AI, Coursera, Stanford",
+		date: "May 2024",
+		link: "https://coursera.org/verify/specialization/KBBR5JA7LM6S",
+		badge: "/ml_logo.jpeg",
+		description: "This course introduced me to modern machine learning concepts including supervised learning, unsupervised learning, recommender systems and reinforcement learning. "
+	}
 ] as const;
