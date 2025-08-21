@@ -97,6 +97,13 @@ export const projectsData = [
 		link: "https://lexiguess.vercel.app/"
 	},
 	{
+		title: "CodeCraft",
+		description: "Real-time web design platform allowing direct HTML, CSS, and JS editing. Features seamless Shadcn and Tailwind CSS integration for responsive interfaces. Utilizes JWT for user authentication.",
+		tags: ["Next.js", ".Net", "MSSQL"],
+		imageUrl: codecraftImg,
+		link: "https://github.com/anirudh-makuluri/code-craft/"
+	},
+		{
 		title: "E- Commerce app",
 		description:
 			"In my third year, I designed and developed a feature-rich e-commerce Android app using Java, showcasing strong object-oriented programming skills. I created an intuitive UI, implemented secure user authentication, and collaborated effectively with a team for planning, and development.",
@@ -104,13 +111,6 @@ export const projectsData = [
 		imageUrl: "",
 		link: "https://github.com/anirudh-makuluri/ecommerce"
 	},
-	{
-		title: "CodeCraft",
-		description: "Real-time web design platform allowing direct HTML, CSS, and JS editing. Features seamless Shadcn and Tailwind CSS integration for responsive interfaces. Utilizes JWT for user authentication.",
-		tags: ["Next.js", ".Net", "MSSQL"],
-		imageUrl: codecraftImg,
-		link: "https://github.com/anirudh-makuluri/code-craft/"
-	}
 ] as const;
 
 export const skillsData = [

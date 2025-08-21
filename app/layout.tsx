@@ -14,7 +14,9 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
   title: "Anirudh Makuluri | Personal Portfolio",
   description: "Anirudh is a full-stack developer with more than 1 year of experience.",
-  keywords: ['Next.js', 'React', 'Javascript', 'Typescript', 'React Native', 'Node.js', 'Oracle Cloud']
+  keywords: ['React', 'Javascript', 'Typescript', 'Oracle Cloud', 'Anirudh Raghavendra Makuluri', 'Anirudh Makuluri'
+	,'Machine Learning', 'Artificial Intelligence', 'ASU', 'Arizona State University', 'Software', 'Engineer', 'Developer'
+  ]
 };
 
 export default function RootLayout({
