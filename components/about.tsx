@@ -19,10 +19,11 @@ export default function About() {
     >
       <SectionHeading>About me</SectionHeading>
       <p className="mb-3">
-            As a graduate from <strong>BITS Pilani</strong> in <strong>2022</strong> with a major in <strong>Electronics and Instrumentation</strong>, 
-            I'm passionate about technology and proficient in <strong>React, Next.js, and React Native</strong>. I'm also familiar with <strong>Java and C#</strong>.
-			I have fundamental knowledge in <strong>Machine Learning</strong> and would like to go further into that field. <br></br>
-            I'm currently pursuing my Masters in Computer Science at <strong>Arizona State University</strong>.
+            Currently pursuing an M.S. in Computer Science at Arizona State University, I’m focused on specializing in 
+			generative AI, designing and deploying models that create rich, context-aware content and enhance user 
+			experiences. Graduated from BITS Pilani in 2022 with a degree in Electronics & Instrumentation, I’m 
+			passionate about leveraging technology to build innovative solutions. I’m proficient in React, Next.js, and 
+			React Native, and have solid experience with Java and C#.
       </p>
     </motion.section>
   );

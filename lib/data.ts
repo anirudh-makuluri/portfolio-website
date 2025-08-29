@@ -5,7 +5,7 @@ import lexiguessImg from "@/public/lexiguess.png";
 import shardingsImg from "@/public/shardings.png";
 import codecraftImg from "@/public/codecraft.png";
 import smartdeployImg from "@/public/smartdeploy.png"
-import { title } from "process";
+import chatifyImg from "@/public/chatify.png"
 
 export const links = [
 	{
@@ -40,20 +40,11 @@ export const links = [
 
 export const experiencesData = [
 	{
-		title: "Software Engineeer Intern",
-		location: "",
-		description:
-			"I worked as a Software Engineer Intern for Shardings. I developed a Google Calendar Workspace Add-on , payment system integration and UI enhancements. ",
-		icon: React.createElement(CgWorkAlt),
-		date: "July 2021 - Dec 2021",
-	},
-	{
-		title: "Graduated B.Tech",
-		location: "Hyderabad, India",
-		description:
-			"I graduated from BITS Pilani with a major in Electronics & Instrumentation in 2022",
-		icon: React.createElement(LuGraduationCap),
-		date: "2022",
+		title: "M.S Computer Science",
+		location: "Tempe, USA",
+		description: "Pursuing my Masters in Computer Science at Arizona State University",
+		icon: React.createElement(LuBook),
+		date: "August 2024 - Present"
 	},
 	{
 		title: "Software Engineer",
@@ -64,11 +55,20 @@ export const experiencesData = [
 		date: "June 2022 - August 2023",
 	},
 	{
-		title: "M.S Computer Science",
-		location: "Tempe, USA",
-		description: "Pursuing my Masters in Computer Science at Arizona State University",
-		icon: React.createElement(LuBook),
-		date: "August 2024 - Present"
+		title: "Graduated B.Tech",
+		location: "Hyderabad, India",
+		description:
+			"I graduated from BITS Pilani with a major in Electronics & Instrumentation in 2022",
+		icon: React.createElement(LuGraduationCap),
+		date: "2022",
+	},
+	{
+		title: "Software Engineeer Intern",
+		location: "",
+		description:
+			"I worked as a Software Engineer Intern for Shardings. I developed a Google Calendar Workspace Add-on , payment system integration and UI enhancements. ",
+		icon: React.createElement(CgWorkAlt),
+		date: "July 2021 - Dec 2021",
 	}
 ] as const;
 
@@ -103,12 +103,18 @@ export const projectsData = [
 		imageUrl: codecraftImg,
 		link: "https://github.com/anirudh-makuluri/code-craft/"
 	},
-		{
+	{
+		title: "Chatify",
+		description: "Chatify is a real-time chat application featuring one-to-one and group messaging, voice and video calls, Google OAuth secure authentication, and responsive design.",
+		tags: ["Next.js", "React", "Node.js", "Firebase", "Socket.io", "WebRTC"],
+		imageUrl: chatifyImg,
+		link: "https://chatify-a.vercel.app/"
+	},
+	{
 		title: "E- Commerce app",
-		description:
-			"In my third year, I designed and developed a feature-rich e-commerce Android app using Java, showcasing strong object-oriented programming skills. I created an intuitive UI, implemented secure user authentication, and collaborated effectively with a team for planning, and development.",
+		description: "In my third year, I designed and developed a feature-rich e-commerce Android app using Java, showcasing strong object-oriented programming skills. I created an intuitive UI, implemented secure user authentication, and collaborated effectively with a team for planning, and development.",
 		tags: ["Java", "Android Development", "Firebase"],
-		imageUrl: "",
+		imageUrl: null,
 		link: "https://github.com/anirudh-makuluri/ecommerce"
 	},
 ] as const;
@@ -134,10 +140,31 @@ export const skillsData = [
 	"CodePush",
 	"Firebase Cloud Messaging",
 	"Fastlane",
-	"Framer Motion"
+	"Framer Motion",
+	"Gen AI",
+	"Langchain",
+	"Tensorflow",
+	"Sci-Kit",
+	"XGBoost"
 ] as const;
 
 export const certificatesData = [
+	{
+		name: "Oracle Certified Generative AI Professional",
+		issuedBy: "Oracle",
+		date: "August 2025",
+		link: "/oracle_gen_ai_professional.pdf",
+		badge: "/oracle_logo.jpeg",
+		description: "Obtaining this certificate significantly improved my knowledge in generative AI. The course covered advanced knowledge in generative AI technologies including LLMs, RAG, and Langchain frameworks."
+	},
+	{
+		name: "Machine Learning Specialization",
+		issuedBy: "DeepLearning.AI, Coursera, Stanford",
+		date: "May 2024",
+		link: "https://coursera.org/verify/specialization/KBBR5JA7LM6S",
+		badge: "/ml_logo.jpeg",
+		description: "This course introduced me to modern machine learning concepts including supervised learning, unsupervised learning, recommender systems and reinforcement learning. "
+	},
 	{
 		name: "Oracle Certified Foundations Associate",
 		issuedBy: "Oracle",
@@ -153,13 +180,5 @@ export const certificatesData = [
 		link: "https://www.freecodecamp.org/certification/Anirudh_Makuluri/foundational-c-sharp-with-microsoft",
 		badge: "/free_code_camp_logo.jpeg",
 		description: "This certificate was a fantastic introduction to the world of C#. I learned how to create my first C# app, code simple applications, create methods, add logic, work with variable data, and even debug C# apps. It laid a strong foundation for my C# journey."
-	},
-	{
-		name: "Machine Learning Specialization",
-		issuedBy: "DeepLearning.AI, Coursera, Stanford",
-		date: "May 2024",
-		link: "https://coursera.org/verify/specialization/KBBR5JA7LM6S",
-		badge: "/ml_logo.jpeg",
-		description: "This course introduced me to modern machine learning concepts including supervised learning, unsupervised learning, recommender systems and reinforcement learning. "
 	}
 ] as const;

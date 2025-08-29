@@ -64,9 +64,8 @@ export default function Intro() {
         animate={{ opacity: 1, y: 0 }}
       >
         <span>
-            Hello, I'm <strong>Anirudh Makuluri</strong>, <br/> a <strong>Full-Stack Developer</strong> with more than <strong>one year</strong> of experience.
-            I specialize in building dynamic websites using <strong>React</strong>, particularly <strong>Next.js</strong>,
-            and crafting mobile applications with expertise in <strong>React Native</strong>.
+           Hello, I’m Anirudh Raghavendra Makuluri, <br></br> a Full-Stack & AI/ML Developer specializing in React, 
+		   Next.js, React Native, Gen AI and Machine Learning.
         </span>
       </motion.h1>
 

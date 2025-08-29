@@ -13,9 +13,9 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Anirudh Makuluri | Personal Portfolio",
-  description: "Anirudh is a full-stack developer with more than 1 year of experience.",
-  keywords: ['React', 'Javascript', 'Typescript', 'Oracle Cloud', 'Anirudh Raghavendra Makuluri', 'Anirudh Makuluri'
-	,'Machine Learning', 'Artificial Intelligence', 'ASU', 'Arizona State University', 'Software', 'Engineer', 'Developer'
+  description: "Anirudh is a full-stack and generative AI developer with over a year of experience.",
+  keywords: ['React', 'Javascript', 'Oracle Cloud', 'Anirudh Raghavendra Makuluri', 'Anirudh Makuluri'
+	,'Machine Learning', 'Artificial Intelligence', 'ASU', 'Arizona State University', 'Software Developer', 'Gen AI'
   ]
 };
 
