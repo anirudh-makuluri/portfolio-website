@@ -35,9 +35,13 @@ export default function Certificate({
                 opacity: opacityProgess
             }}
             className='group mb-3 sm:mb-8 last:mb-0'
+            whileHover={{
+                y: -8,
+                transition: { duration: 0.3 }
+            }}
         >
             <Link href={link} target='_blank'>
-                <section className="bg-gray-100 flex flex-row justify-between gap-4 max-w-[45rem] border border-black/5 rounded-lg overflow-hidden sm:pr-8 relative sm:h-[20rem] hover:bg-gray-200 transition sm:pl-8 dark:text-white dark:bg-white/10 dark:hover:bg-white/20">
+                <section className="bg-gray-100 flex flex-row justify-between gap-4 max-w-[45rem] border border-black/5 rounded-lg overflow-hidden sm:pr-8 relative sm:h-[20rem] hover:bg-gray-200 transition hover:shadow-2xl sm:pl-8 dark:text-white dark:bg-white/10 dark:hover:bg-white/20">
                     <div className='flex items-center justify-center'>
                         <Image
                             src={badge}

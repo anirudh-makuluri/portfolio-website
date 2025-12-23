@@ -50,7 +50,13 @@ export default function Achievements() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.1 }}
-            className="bg-white dark:bg-white/10 rounded-lg p-6 shadow-lg hover:scale-105 transition-transform border border-black/5 dark:border-white/10"
+            whileHover={{
+              scale: 1.05,
+              y: -5,
+              boxShadow: "0 20px 40px rgba(0, 0, 0, 0.15)",
+              transition: { duration: 0.2 }
+            }}
+            className="bg-white dark:bg-white/10 rounded-lg p-6 shadow-lg transition-transform border border-black/5 dark:border-white/10 cursor-default"
           >
             <div className="flex items-center gap-4 mb-3">
               <div className="bg-blue-500 dark:bg-blue-600 p-3 rounded-full text-white">
