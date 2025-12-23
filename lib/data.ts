@@ -48,9 +48,9 @@ export const experiencesData = [
 	},
 	{
 		title: "Software Engineer",
-		location: "",
+		location: "Shardings",
 		description:
-			"I worked as a software engineer for Shardings for 1 year. I was responsible for maintaining both the front end and back end. ",
+			"I worked as a software engineer for Shardings for 1 year. I was responsible for maintaining both the front end and back end.",
 		icon: React.createElement(CgWorkAlt),
 		date: "June 2022 - August 2023",
 	},
@@ -63,10 +63,10 @@ export const experiencesData = [
 		date: "2022",
 	},
 	{
-		title: "Software Engineeer Intern",
-		location: "",
+		title: "Software Engineer Intern",
+		location: "Shardings",
 		description:
-			"I worked as a Software Engineer Intern for Shardings. I developed a Google Calendar Workspace Add-on , payment system integration and UI enhancements. ",
+			"I worked as a Software Engineer Intern for Shardings. I developed a Google Calendar Workspace Add-on, payment system integration and UI enhancements.",
 		icon: React.createElement(CgWorkAlt),
 		date: "July 2021 - Dec 2021",
 	}
@@ -78,15 +78,17 @@ export const projectsData = [
 		description: "Lightweight DevOps automation platform that lets you connect your GitHub repository, configure deployment settings, and deploy to Google Cloud Run in just a few clicks.",
 		tags: ['LLM', 'Next.js', "Google Cloud Platform", "Websockets", "Firebase"],
 		imageUrl: smartdeployImg,
-		link: "https://github.com/anirudh-makuluri/smart-deploy/"
+		githubLink: "https://github.com/anirudh-makuluri/smart-deploy/",
+		liveLink: null
 	},
 	{
 		title: "Shardings Meet",
 		description:
 			"I worked as a full-stack developer on this startup project for 1 year. Shardings-Meet offers customizable virtual environments for diverse virtual experiences.",
-		tags: ["React", "React Native", "Node.js", "Firebase", , "WebRTC", "Google Cloud Platform"],
+		tags: ["React", "React Native", "Node.js", "Firebase", "WebRTC", "Google Cloud Platform"],
 		imageUrl: shardingsImg,
-		link: "https://shardings.com/"
+		githubLink: null,
+		liveLink: "https://shardings.com/"
 	},
 	{
 		title: "LexiGuess",
@@ -94,28 +96,32 @@ export const projectsData = [
 			"LexiGuess is an engaging word-guessing website with three game modes and customizable word settings. It offers educational word meanings in \"Hard Word\" mode.",
 		tags: ["Next.js", "Tailwind CSS"],
 		imageUrl: lexiguessImg,
-		link: "https://lexiguess.vercel.app/"
+		githubLink: "https://github.com/anirudh-makuluri/lexiguess",
+		liveLink: "https://lexiguess.vercel.app/"
 	},
 	{
 		title: "CodeCraft",
 		description: "Real-time web design platform allowing direct HTML, CSS, and JS editing. Features seamless Shadcn and Tailwind CSS integration for responsive interfaces. Utilizes JWT for user authentication.",
 		tags: ["Next.js", ".Net", "MSSQL"],
 		imageUrl: codecraftImg,
-		link: "https://github.com/anirudh-makuluri/code-craft/"
+		githubLink: "https://github.com/anirudh-makuluri/code-craft/",
+		liveLink: null
 	},
 	{
 		title: "Chatify",
 		description: "Chatify is a real-time chat application featuring one-to-one and group messaging, voice and video calls, Google OAuth secure authentication, and responsive design.",
 		tags: ["Next.js", "React", "Node.js", "Firebase", "Socket.io", "WebRTC"],
 		imageUrl: chatifyImg,
-		link: "https://chatify-a.vercel.app/"
+		githubLink: "https://github.com/anirudh-makuluri/chatify",
+		liveLink: "https://chatify-a.vercel.app/"
 	},
 	{
-		title: "E- Commerce app",
-		description: "In my third year, I designed and developed a feature-rich e-commerce Android app using Java, showcasing strong object-oriented programming skills. I created an intuitive UI, implemented secure user authentication, and collaborated effectively with a team for planning, and development.",
+		title: "E-Commerce App",
+		description: "Feature-rich e-commerce Android app using Java, showcasing strong object-oriented programming skills. Created an intuitive UI, implemented secure user authentication, and collaborated effectively with a team for planning and development.",
 		tags: ["Java", "Android Development", "Firebase"],
 		imageUrl: null,
-		link: "https://github.com/anirudh-makuluri/ecommerce"
+		githubLink: "https://github.com/anirudh-makuluri/ecommerce",
+		liveLink: null
 	},
 ] as const;
 
@@ -144,9 +150,17 @@ export const skillsData = [
 	"Gen AI",
 	"Langchain",
 	"Tensorflow",
-	"Sci-Kit",
+	"Scikit-Learn",
 	"XGBoost"
 ] as const;
+
+export const categorizedSkills = {
+	"Frontend": ["React.js", "Next.js", "TypeScript", "JavaScript", "Tailwind CSS", "Redux", "Framer Motion"],
+	"Mobile": ["React Native", "CodePush", "Firebase Cloud Messaging", "Fastlane"],
+	"Backend": ["Node.js", ".Net", "C#", "Java", "Socket.IO", "WebRTC"],
+	"Database & Cloud": ["Firebase", "MSSQL", "Google Cloud Platform", "Oracle Cloud Infrastructure"],
+	"AI & Machine Learning": ["Gen AI", "Langchain", "Tensorflow", "Scikit-Learn", "XGBoost"]
+} as const;
 
 export const certificatesData = [
 	{

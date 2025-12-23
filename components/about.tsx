@@ -19,11 +19,27 @@ export default function About() {
     >
       <SectionHeading>About me</SectionHeading>
       <p className="mb-3">
-            Currently pursuing an M.S. in Computer Science at Arizona State University, I’m focused on specializing in 
-			generative AI, designing and deploying models that create rich, context-aware content and enhance user 
-			experiences. Graduated from BITS Pilani in 2022 with a degree in Electronics & Instrumentation, I’m 
-			passionate about leveraging technology to build innovative solutions. I’m proficient in React, Next.js, and 
-			React Native, and have solid experience with Java and C#.
+        Currently pursuing an <span className="font-medium">M.S. in Computer Science at Arizona State University</span>, 
+        I'm specializing in <span className="font-medium">generative AI</span> and designing models that create rich, 
+        context-aware content to enhance user experiences.
+      </p>
+      
+      <p className="mb-3">
+        After graduating from <span className="font-medium">BITS Pilani</span> in 2022 with a degree in Electronics & 
+        Instrumentation, I transitioned into software development and haven't looked back since. I've had the privilege 
+        of working at <span className="font-medium">Shardings</span> as a full-stack engineer, where I built scalable 
+        web and mobile applications using modern technologies.
+      </p>
+
+      <p className="mb-3">
+        <span className="italic">What drives me?</span> I love the challenge of turning complex problems into elegant, 
+        user-friendly solutions. Whether it's building real-time communication systems with WebRTC, deploying AI models, 
+        or creating seamless mobile experiences with React Native, I'm always excited to learn and build something new.
+      </p>
+
+      <p>
+        <span className="font-medium">When I'm not coding</span>, you'll find me exploring the latest AI research papers, 
+        or experimenting with new frameworks and tools.
       </p>
     </motion.section>
   );

@@ -7,16 +7,61 @@ import ThemeSwitch from "@/components/theme-switch";
 import ThemeContextProvider from "@/context/theme-context";
 import { Toaster } from "react-hot-toast";
 import { Analytics } from '@vercel/analytics/react';
+import ScrollToTop from "@/components/scroll-to-top";
 
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Anirudh Makuluri | Personal Portfolio",
-  description: "Anirudh is a full-stack and generative AI developer with over a year of experience.",
-  keywords: ['React', 'Javascript', 'Oracle Cloud', 'Anirudh Raghavendra Makuluri', 'Anirudh Makuluri'
-	,'Machine Learning', 'Artificial Intelligence', 'ASU', 'Arizona State University', 'Software Developer', 'Gen AI'
-  ]
+  title: "Anirudh Makuluri | Full-Stack & AI/ML Developer",
+  description: "Full-Stack Developer and AI/ML Engineer specializing in React, Next.js, React Native, and Generative AI. Currently pursuing M.S. in Computer Science at Arizona State University.",
+  keywords: [
+    'Anirudh Makuluri', 
+    'Anirudh Raghavendra Makuluri',
+    'Full Stack Developer', 
+    'React Developer', 
+    'Next.js Developer',
+    'React Native Developer',
+    'AI/ML Engineer',
+    'Generative AI',
+    'Machine Learning',
+    'Arizona State University',
+    'ASU',
+    'Software Engineer',
+    'Web Developer',
+    'TypeScript',
+    'Node.js',
+    'Firebase',
+    'Google Cloud Platform',
+    'Oracle Cloud'
+  ],
+  authors: [{ name: 'Anirudh Makuluri' }],
+  creator: 'Anirudh Makuluri',
+  publisher: 'Anirudh Makuluri',
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://anirudh-makuluri.xyz',
+    title: 'Anirudh Makuluri | Full-Stack & AI/ML Developer',
+    description: 'Full-Stack Developer and AI/ML Engineer specializing in React, Next.js, React Native, and Generative AI.',
+    siteName: 'Anirudh Makuluri Portfolio',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Anirudh Makuluri | Full-Stack & AI/ML Developer',
+    description: 'Full-Stack Developer and AI/ML Engineer specializing in React, Next.js, React Native, and Generative AI.',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 };
 
 export default function RootLayout({
@@ -40,6 +85,7 @@ export default function RootLayout({
 
             <Toaster position="top-right" />
             <ThemeSwitch />
+            <ScrollToTop />
           </ActiveSectionContextProvider>
         </ThemeContextProvider>
 		<Analytics/>

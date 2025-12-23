@@ -52,6 +52,15 @@ export default function Contact() {
           toast.success("Email sent successfully!");
         }}
       >
+        {/* Honeypot field - hidden from users but bots will fill it */}
+        <input
+          type="text"
+          name="botcheck"
+          className="hidden"
+          tabIndex={-1}
+          autoComplete="off"
+        />
+        
         <input
           className="h-14 px-4 rounded-lg borderBlack dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
           name="senderEmail"
