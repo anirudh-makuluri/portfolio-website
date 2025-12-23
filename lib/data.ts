@@ -136,6 +136,7 @@ export const skillsData = [
 	"Tailwind CSS",
 	"Firebase",
 	"MSSQL",
+	"Neo4j",
 	".Net",
 	"Google Cloud Platform",
 	"Oracle Cloud Infrastructure",
@@ -149,6 +150,7 @@ export const skillsData = [
 	"Framer Motion",
 	"Gen AI",
 	"Langchain",
+	"Zep",
 	"Tensorflow",
 	"Scikit-Learn",
 	"XGBoost"
@@ -158,8 +160,8 @@ export const categorizedSkills = {
 	"Frontend": ["React.js", "Next.js", "TypeScript", "JavaScript", "Tailwind CSS", "Redux", "Framer Motion"],
 	"Mobile": ["React Native", "CodePush", "Firebase Cloud Messaging", "Fastlane"],
 	"Backend": ["Node.js", ".Net", "C#", "Java", "Socket.IO", "WebRTC"],
-	"Database & Cloud": ["Firebase", "MSSQL", "Google Cloud Platform", "Oracle Cloud Infrastructure"],
-	"AI & Machine Learning": ["Gen AI", "Langchain", "Tensorflow", "Scikit-Learn", "XGBoost"]
+	"Database & Cloud": ["Firebase", "MSSQL", "Neo4j", "Google Cloud Platform", "Oracle Cloud Infrastructure"],
+	"AI & Machine Learning": ["Gen AI", "Langchain", "Zep", "Tensorflow", "Scikit-Learn", "XGBoost"]
 } as const;
 
 export const certificatesData = [

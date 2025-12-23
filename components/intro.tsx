@@ -7,6 +7,7 @@ import Link from "next/link";
 import { BsArrowRight, BsLinkedin } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
 import { FaGithubSquare } from "react-icons/fa";
+import { TypeAnimation } from 'react-type-animation';
 import { useSectionInView } from "@/lib/hooks";
 import { useActiveSectionContext } from "@/context/active-section-context";
 import profileImg from "@/public/bitmoji.png";
@@ -23,6 +24,43 @@ export default function Intro() {
     >
       <div className="flex items-center justify-center">
         <div className="relative">
+          {/* Rotating Gradient Ring */}
+          <motion.div
+            className="absolute inset-0 rounded-full"
+            style={{
+              background: "linear-gradient(45deg, #78C1F3, #9BE8D8, #78C1F3)",
+              padding: "3px",
+            }}
+            animate={{
+              rotate: 360,
+            }}
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+              ease: "linear",
+            }}
+          >
+            <div className="w-full h-full rounded-full bg-gray-50 dark:bg-gray-900" />
+          </motion.div>
+
+          {/* Outer Glow */}
+          <motion.div
+            className="absolute inset-0 rounded-full opacity-50 blur-lg"
+            style={{
+              background: "radial-gradient(circle, rgba(120, 193, 243, 0.4) 0%, transparent 70%)",
+            }}
+            animate={{
+              scale: [1, 1.2, 1],
+              opacity: [0.5, 0.3, 0.5],
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+
+          {/* Profile Image */}
           <motion.div
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -31,7 +69,7 @@ export default function Intro() {
               duration: 0.2,
             }}
             whileHover={{ scale: 1.1, rotate: 5 }}
-            className="cursor-pointer"
+            className="cursor-pointer relative z-10"
           >
             <Image
               src={profileImg}
@@ -40,12 +78,13 @@ export default function Intro() {
               height="192"
               quality="95"
               priority={true}
-              className="h-24 w-24 rounded-full object-cover shadow-xl"
+              className="h-24 w-24 rounded-full object-cover shadow-xl border-4 border-gray-50 dark:border-gray-900"
             />
           </motion.div>
 
+          {/* Waving Hand */}
           <motion.span
-            className="absolute bottom-0 right-0 text-4xl"
+            className="absolute hidden bottom-0 right-0 text-4xl z-20"
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{
@@ -54,9 +93,29 @@ export default function Intro() {
               delay: 0.1,
               duration: 0.7,
             }}
+            whileHover={{
+              rotate: [0, 15, -15, 15, 0],
+              transition: { duration: 0.5 },
+            }}
           >
             👋
           </motion.span>
+
+          {/* Status Badge */}
+          <motion.div
+            className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 z-20"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+          >
+            <div className="bg-white dark:bg-gray-800 px-4 py-1.5 rounded-full shadow-lg border border-gray-200 dark:border-gray-700 flex items-center gap-2">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+              </span>
+              <span className="text-xs whitespace-nowrap font-semibold text-gray-700 dark:text-gray-200">Open to Work</span>
+            </div>
+          </motion.div>
         </div>
       </div>
 
@@ -65,9 +124,27 @@ export default function Intro() {
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <span>
-           Hello, I’m Anirudh Raghavendra Makuluri, <br></br> a Full-Stack & AI/ML Developer specializing in React, 
-		   Next.js, React Native, Gen AI and Machine Learning.
+        <span className="block mb-2">
+          Hello, I'm{" "}
+          <TypeAnimation
+            sequence={[
+              'Anirudh Raghavendra Makuluri',
+              2000,
+              'a Full-Stack Developer',
+              2000,
+              'an AI/ML Engineer',
+              2000,
+              'a Problem Solver',
+              2000,
+            ]}
+            wrapper="span"
+            speed={50}
+            className="bg-gradient-to-r from-[#78C1F3] to-[#9BE8D8] bg-clip-text text-transparent font-bold"
+            repeat={Infinity}
+          />
+        </span>
+        <span className="block text-lg sm:text-2xl text-gray-700 dark:text-gray-300 font-normal mt-4">
+          Specializing in React, Next.js, React Native, Gen AI and Machine Learning
         </span>
       </motion.h1>
 
