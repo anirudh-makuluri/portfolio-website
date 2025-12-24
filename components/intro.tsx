@@ -139,7 +139,7 @@ export default function Intro() {
             ]}
             wrapper="span"
             speed={50}
-            className="bg-gradient-to-r from-[#78C1F3] to-[#9BE8D8] bg-clip-text text-transparent font-bold"
+            className="bg-gradient-to-r from-blue-600 to-cyan-600 dark:from-[#78C1F3] dark:to-[#9BE8D8] bg-clip-text text-transparent font-bold"
             repeat={Infinity}
           />
         </span>
