@@ -2,6 +2,7 @@ import Header from "@/components/header";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import ActiveSectionContextProvider from "@/context/active-section-context";
+import { GraphHighlightProvider } from "@/context/graph-highlight-context";
 import Footer from "@/components/footer";
 import ThemeSwitch from "@/components/theme-switch";
 import ThemeContextProvider from "@/context/theme-context";
@@ -9,6 +10,7 @@ import { Toaster } from "react-hot-toast";
 import { Analytics } from '@vercel/analytics/react';
 import ScrollToTop from "@/components/scroll-to-top";
 import AnimatedBackground from "@/components/background";
+import Chatbot from "@/components/chatbot";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -79,13 +81,16 @@ export default function RootLayout({
 
         <ThemeContextProvider>
           <ActiveSectionContextProvider>
-            <Header />
-            {children}
-            <Footer />
+            <GraphHighlightProvider>
+              <Header />
+              {children}
+              <Footer />
 
-            <Toaster position="top-right" />
-            <ThemeSwitch />
-            <ScrollToTop />
+              <Toaster position="top-right" />
+              <ThemeSwitch />
+              <ScrollToTop />
+              <Chatbot />
+            </GraphHighlightProvider>
           </ActiveSectionContextProvider>
         </ThemeContextProvider>
 		<Analytics/>
