@@ -3,7 +3,7 @@ import { projectsData, skillsData, experiencesData, certificatesData } from "./d
 export interface GraphNode {
 	id: string;
 	label: string;
-	type: 'person' | 'project' | 'skill' | 'experience' | 'certificate' | 'company' | 'technology';
+	type: 'person' | 'project' | 'skill' | 'experience' | 'certificate' | 'company' | 'technology' | 'visa';
 	color: string;
 	val?: number; // size of node
 	metadata?: any;
@@ -31,6 +31,7 @@ const NODE_COLORS = {
 	certificate: '#FFD700',
 	company: '#FFA07A',
 	technology: '#98D8C8',
+	visa: '#A78BFA',
 };
 
 const NODE_SIZES = {
@@ -41,6 +42,7 @@ const NODE_SIZES = {
 	certificate: 30,
 	company: 32,
 	technology: 20,
+	visa: 18,
 };
 
 export function buildKnowledgeGraph(): KnowledgeGraph {
@@ -57,8 +59,38 @@ export function buildKnowledgeGraph(): KnowledgeGraph {
 		section: 'home',
 		metadata: {
 			role: 'Full-Stack Developer & AI/ML Engineer',
-			education: 'M.S. Computer Science @ ASU'
+			education: 'M.S. Computer Science @ ASU',
+			citizenship: 'Indian Citizen',
+			location: 'United States'
 		}
+	});
+
+	// Visa/Work Authorization node
+	const visaId = 'f1-visa';
+	nodes.push({
+		id: visaId,
+		label: 'F-1 Visa',
+		type: 'visa',
+		color: NODE_COLORS.visa,
+		val: NODE_SIZES.visa,
+		section: 'home',
+		metadata: {
+			visaType: 'F-1 Student Visa',
+			citizenship: 'Indian Citizen',
+			workAuthorization: 'Eligible for OPT and STEM OPT',
+			totalWorkMonths: 36,
+			breakdown: 'OPT (12 months) + STEM OPT Extension (24 months)',
+			status: 'Currently on F-1 visa',
+			description: 'Indian citizen on F-1 visa, eligible to work in the USA for a total of 36 months through OPT and STEM OPT programs'
+		}
+	});
+
+	// Link person to visa
+	links.push({
+		source: 'anirudh',
+		target: visaId,
+		label: 'HAS_VISA',
+		color: 'rgba(167, 139, 250, 0.3)',
 	});
 
 	// Extract companies from experiences

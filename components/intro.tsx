@@ -146,6 +146,9 @@ export default function Intro() {
         <span className="block text-lg sm:text-2xl text-gray-700 dark:text-gray-300 font-normal mt-4">
           Specializing in React, Next.js, React Native, Gen AI and Machine Learning
         </span>
+        <span className="block text-base sm:text-lg text-gray-600 dark:text-gray-400 font-normal mt-3">
+          Indian Citizen | F-1 Visa | Eligible for OPT & STEM OPT (36 months work authorization in USA)
+        </span>
       </motion.h1>
 
       <motion.div
