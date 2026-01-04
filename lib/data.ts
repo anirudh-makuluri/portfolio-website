@@ -112,7 +112,7 @@ export const projectsData = [
 		description: "Chatify is a real-time chat application featuring one-to-one and group messaging, voice and video calls, Google OAuth secure authentication, and responsive design.",
 		tags: ["Next.js", "React", "Node.js", "Firebase", "Socket.io", "WebRTC"],
 		imageUrl: chatifyImg,
-		githubLink: "https://github.com/anirudh-makuluri/chatify",
+		githubLink: "https://github.com/anirudh-makuluri/chatify-next",
 		liveLink: "https://chatify-a.vercel.app/"
 	},
 	{
