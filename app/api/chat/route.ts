@@ -55,16 +55,25 @@ INSTRUCTIONS:
 		});
 
 		let chatHistory: any[] = [];
+		
 		if (history && history.length > 1) {
-			const validHistory = history.slice(1, -1); // Exclude current message
-			chatHistory = validHistory.slice(-10).map((msg: any) => ({
+			const filteredHistory = history
+				.slice(1) 
+				.filter((msg: any) => msg.content && msg.content.trim().length > 0); // Remove empty messages
+			
+			const recentHistory = filteredHistory.slice(-10);
+			
+			chatHistory = recentHistory.map((msg: any) => ({
 				role: msg.role === 'user' ? 'user' : 'model',
 				parts: [{ text: msg.content }]
 			}));
 			
-			// Ensure first message is from user
-			if (chatHistory.length > 0 && chatHistory[0].role !== 'user') {
-				chatHistory = chatHistory.slice(1);
+			while (chatHistory.length > 0 && chatHistory[0].role !== 'user') {
+				chatHistory.shift();
+			}
+			
+			if (chatHistory.length > 0 && chatHistory[chatHistory.length - 1].role === 'user') {
+				chatHistory.pop();
 			}
 		}
 
@@ -75,9 +84,6 @@ INSTRUCTIONS:
 				temperature: 0.3,
 			},
 		});
-
-		console.log(chatHistory);
-		console.log(message);
 
 		const result = await chat.sendMessage(message);
 		const response = result.response.text();
