@@ -77,7 +77,7 @@ INSTRUCTIONS:
 			}
 		}
 
-		// Generate response with Gemini
+		// Generate response with Gemini (with 20s timeout)
 		const chat = model.startChat({
 			history: chatHistory,
 			generationConfig: {
@@ -85,8 +85,34 @@ INSTRUCTIONS:
 			},
 		});
 
-		const result = await chat.sendMessage(message);
-		const response = result.response.text();
+		// Create a timeout promise
+		const timeoutPromise = new Promise((_, reject) => {
+			setTimeout(() => {
+				reject(new Error('Request timeout: Gemini API took longer than 20 seconds to respond'));
+			}, 20000); // 20 seconds
+		});
+
+		// Race between Gemini response and timeout
+		let response: string;
+		try {
+			const result = await Promise.race([
+				chat.sendMessage(message),
+				timeoutPromise
+			]) as any;
+			response = result.response.text();
+		} catch (error: any) {
+			if (error.message?.includes('timeout')) {
+				return NextResponse.json(
+					{ 
+						error: 'The AI is taking too long to respond. Please try again.',
+						response: "I apologize, but I'm experiencing a delay. Could you please try asking your question again?",
+						highlightedNodes: [],
+					},
+					{ status: 408 } // Request Timeout status
+				);
+			}
+			throw error; // Re-throw other errors
+		}
 
 		return NextResponse.json({
 			response,

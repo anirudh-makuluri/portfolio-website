@@ -28,12 +28,18 @@ export default function Chatbot() {
 	const inputRef = useRef<HTMLInputElement>(null);
 	const { setHighlightedNodes } = useGraphHighlight();
 
-	// Auto-scroll to bottom
 	useEffect(() => {
 		messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
 	}, [messages]);
 
-	// Auto-focus input when chat opens or after sending message
+	useEffect(() => {
+		if (isOpen && messages.length > 1) {
+			setTimeout(() => {
+				messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+			}, 100);
+		}
+	}, [isOpen]);
+
 	useEffect(() => {
 		if (isOpen && !isLoading) {
 			inputRef.current?.focus();
@@ -65,18 +71,28 @@ export default function Chatbot() {
 
 			const data = await response.json();
 
-			const assistantMessage: Message = {
-				id: (Date.now() + 1).toString(),
-				role: 'assistant',
-				content: data.response,
-				highlightedNodes: data.highlightedNodes || [],
-			};
+			// Handle timeout or error responses
+			if (data.error || response.status === 408) {
+				const errorMessage: Message = {
+					id: (Date.now() + 1).toString(),
+					role: 'assistant',
+					content: data.response || data.error || "I apologize, but I'm experiencing a delay. Could you please try asking your question again?",
+				};
+				setMessages(prev => [...prev, errorMessage]);
+			} else {
+				const assistantMessage: Message = {
+					id: (Date.now() + 1).toString(),
+					role: 'assistant',
+					content: data.response,
+					highlightedNodes: data.highlightedNodes || [],
+				};
 
-			setMessages(prev => [...prev, assistantMessage]);
+				setMessages(prev => [...prev, assistantMessage]);
 
-			// Highlight nodes in graph
-			if (data.highlightedNodes && data.highlightedNodes.length > 0) {
-				setHighlightedNodes(data.highlightedNodes);
+				// Highlight nodes in graph
+				if (data.highlightedNodes && data.highlightedNodes.length > 0) {
+					setHighlightedNodes(data.highlightedNodes);
+				}
 			}
 		} catch (error) {
 			console.error('Error sending message:', error);
