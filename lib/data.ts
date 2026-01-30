@@ -75,11 +75,11 @@ export const experiencesData = [
 export const projectsData = [
 	{
 		title: "SmartDeploy",
-		description: "Lightweight DevOps automation platform that lets you connect your GitHub repository, configure deployment settings, and deploy to Google Cloud Run in just a few clicks.",
-		tags: ['LLM', 'Next.js', "Google Cloud Platform", "Websockets", "Firebase"],
+		description: "Lightweight DevOps automation platform that connects your GitHub repo, auto-analyzes your stack with AI, and deploys to AWS services or Google Cloud Run in just a few clicks.",
+		tags: ["LLM", "Next.js", "Tailwind CSS", "Firebase", "AWS", "Google Cloud Platform", "Docker"],
 		imageUrl: smartdeployImg,
 		githubLink: "https://github.com/anirudh-makuluri/smart-deploy/",
-		liveLink: null
+		liveLink: "https://smart-deploy.anirudh-makuluri.xyz/"
 	},
 	{
 		title: "Shardings Meet",
