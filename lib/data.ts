@@ -75,6 +75,14 @@ export const experiencesData = [
 
 export const projectsData = [
 	{
+		title: "SmartDeploy",
+		description: "Lightweight DevOps automation platform that connects your GitHub repo, auto-analyzes your stack with AI, and deploys to AWS services or Google Cloud Platform in just a few clicks.",
+		tags: ["Gemini", "Next.js", "Tailwind CSS", "Firebase", "AWS", "Google Cloud Platform", "Docker", "Tanstack Query", "Zustand"],
+		imageUrl: smartdeployImg,
+		githubLink: "https://github.com/anirudh-makuluri/smart-deploy/",
+		liveLink: "https://smart-deploy.anirudh-makuluri.xyz/"
+	},
+	{
 		title: "Accio — PDF RAG Knowledge System",
 		description: "End-to-end PDF knowledge extraction and Q&A system that ingests documents, builds a Neo4j knowledge graph with local vector embeddings, and powers a Streamlit chat UI with grounded citations and PDF highlights.",
 		tags: ["RAG", "Neo4j", "FastAPI", "Streamlit", "sentence-transformers", "Docker", "Google Gemini"],
@@ -89,15 +97,6 @@ export const projectsData = [
 		imageUrl: null,
 		githubLink: "https://github.com/anirudh-makuluri/graphstream_dps",
 		liveLink: null
-	}
-	,
-	{
-		title: "SmartDeploy",
-		description: "Lightweight DevOps automation platform that connects your GitHub repo, auto-analyzes your stack with AI, and deploys to AWS services or Google Cloud Platform in just a few clicks.",
-		tags: ["Gemini", "Next.js", "Tailwind CSS", "Firebase", "AWS", "Google Cloud Platform", "Docker", "Tanstack Query", "Zustand"],
-		imageUrl: smartdeployImg,
-		githubLink: "https://github.com/anirudh-makuluri/smart-deploy/",
-		liveLink: "https://smart-deploy.anirudh-makuluri.xyz/"
 	},
 	{
 		title: "Shardings Meet",
@@ -173,12 +172,13 @@ export const skillsData = [
 ] as const;
 
 export const categorizedSkills = {
-	"Frontend": ["React.js", "Next.js", "TypeScript", "JavaScript", "Tailwind CSS", "Redux", "Framer Motion"],
-	"Mobile": ["React Native", "CodePush", "Firebase Cloud Messaging", "Fastlane"],
-	"Backend": ["Node.js", ".Net", "C#", "Java", "Socket.IO", "WebRTC"],
-	"Database & Cloud": ["Firebase", "MSSQL", "Google Cloud Platform", "Oracle Cloud Infrastructure"],
-	"AI & Machine Learning": ["Gen AI", "Langchain", "Tensorflow", "Scikit-Learn", "XGBoost"]
+    "Frontend": ["React.js", "Next.js", "TypeScript", "JavaScript", "Tailwind CSS", "Zustand", "TanStack Query", "Framer Motion"],
+    "Mobile": ["React Native", "Expo", "CodePush", "Firebase Cloud Messaging", "Fastlane"],
+    "Backend": ["Node.js", ".Net", "C#", "Java", "Socket.IO", "WebRTC", "FastAPI"],
+    "Database & Cloud": ["Supabase", "Firebase", "Neo4j", "MSSQL", "PostgreSQL", "AWS (EC2, ECS, EBS)", "Google Cloud Platform", "Kubernetes", "Helm", "Docker"],
+    "AI & Machine Learning": ["Gen AI", "Langchain", "CrewAI", "Ollama/Mistral", "sentence-transformers", "Tensorflow", "PyTorch Geometric", "Scikit-Learn", "XGBoost", "Graph Data Science"]
 } as const;
+
 
 export const certificatesData = [
 	{
