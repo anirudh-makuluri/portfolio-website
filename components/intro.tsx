@@ -134,6 +134,8 @@ export default function Intro() {
               2000,
               'an AI/ML Engineer',
               2000,
+			  'a DevOps Engineer',
+			  2000,
               'a Problem Solver',
               2000,
             ]}
@@ -173,7 +175,7 @@ export default function Intro() {
 
         <a
           className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10"
-          href="/Anirudh_Raghavendra_Makuluri__Resume.pdf"
+          href="/Anirudh_Raghavendra_Makuluri_resume.pdf"
           download
         >
           Download CV{" "}

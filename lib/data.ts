@@ -83,6 +83,14 @@ export const projectsData = [
 		liveLink: "https://smart-deploy.anirudh-makuluri.xyz/"
 	},
 	{
+		title: "SD-Artifacts",
+		description: "LLM-powered repo analyzer powering SmartDeploy that scans a GitHub project, infers its stack, and generates production-ready Dockerfile, docker-compose, and nginx configs with hadolint checks.",
+		tags: ["LangGraph", "FastAPI", "Claude Haiku", "Amazon Bedrock", "Supabase", "GitHub API", "Docker"],
+		imageUrl: null,
+		githubLink: "https://github.com/anirudh-makuluri/sd-artifacts",
+		liveLink: null
+	},
+	{
 		title: "Accio — PDF RAG Knowledge System",
 		description: "End-to-end PDF knowledge extraction and Q&A system that ingests documents, builds a Neo4j knowledge graph with local vector embeddings, and powers a Streamlit chat UI with grounded citations and PDF highlights.",
 		tags: ["RAG", "Neo4j", "FastAPI", "Streamlit", "sentence-transformers", "Docker", "Google Gemini"],
@@ -144,40 +152,100 @@ export const projectsData = [
 
 export const skillsData = [
 	"React.js",
-	"Node.js",
-	"JavaScript",
-	"TypeScript",
-	"React Native",
-	"Redux",
 	"Next.js",
+	"TypeScript",
+	"JavaScript",
 	"Tailwind CSS",
-	"Firebase",
-	"MSSQL",
-	".Net",
-	"Google Cloud Platform",
-	"Oracle Cloud Infrastructure",
-	"Socket.IO",
-	"WebRTC",
-	"C#",
-	"Java",
+	"Zustand",
+	"TanStack Query",
+	"Framer Motion",
+	"React Native",
+	"Expo",
 	"CodePush",
 	"Firebase Cloud Messaging",
 	"Fastlane",
-	"Framer Motion",
+	"Node.js",
+	".Net",
+	"C#",
+	"Java",
+	"Socket.IO",
+	"WebRTC",
+	"FastAPI",
+	"Supabase",
+	"Firebase",
+	"Neo4j",
+	"MSSQL",
+	"PostgreSQL",
+	"AWS (EC2, ECS, EBS)",
+	"Google Cloud Platform",
+	"Kubernetes",
+	"Helm",
+	"Docker",
 	"Gen AI",
 	"Langchain",
+	"CrewAI",
+	"Ollama/Mistral",
+	"sentence-transformers",
 	"Tensorflow",
+	"PyTorch Geometric",
 	"Scikit-Learn",
-	"XGBoost"
-] as const;
-
-export const categorizedSkills = {
-    "Frontend": ["React.js", "Next.js", "TypeScript", "JavaScript", "Tailwind CSS", "Zustand", "TanStack Query", "Framer Motion"],
-    "Mobile": ["React Native", "Expo", "CodePush", "Firebase Cloud Messaging", "Fastlane"],
-    "Backend": ["Node.js", ".Net", "C#", "Java", "Socket.IO", "WebRTC", "FastAPI"],
-    "Database & Cloud": ["Supabase", "Firebase", "Neo4j", "MSSQL", "PostgreSQL", "AWS (EC2, ECS, EBS)", "Google Cloud Platform", "Kubernetes", "Helm", "Docker"],
-    "AI & Machine Learning": ["Gen AI", "Langchain", "CrewAI", "Ollama/Mistral", "sentence-transformers", "Tensorflow", "PyTorch Geometric", "Scikit-Learn", "XGBoost", "Graph Data Science"]
-} as const;
+	"XGBoost",
+	"Graph Data Science"
+  ] as const;
+  
+  export const categorizedSkills = {
+	Frontend: [
+	  "React.js",
+	  "Next.js",
+	  "TypeScript",
+	  "JavaScript",
+	  "Tailwind CSS",
+	  "Zustand",
+	  "TanStack Query",
+	  "Framer Motion"
+	],
+	Mobile: [
+	  "React Native",
+	  "Expo",
+	  "CodePush",
+	  "Firebase Cloud Messaging",
+	  "Fastlane"
+	],
+	Backend: [
+	  "Node.js",
+	  ".Net",
+	  "C#",
+	  "Java",
+	  "Socket.IO",
+	  "WebRTC",
+	  "FastAPI"
+	],
+	"Database & Cloud": [
+	  "Supabase",
+	  "Firebase",
+	  "Neo4j",
+	  "MSSQL",
+	  "PostgreSQL",
+	  "AWS (EC2, ECS, EBS)",
+	  "Google Cloud Platform",
+	  "Kubernetes",
+	  "Helm",
+	  "Docker"
+	],
+	"AI & Machine Learning": [
+	  "Gen AI",
+	  "Langchain",
+	  "CrewAI",
+	  "Ollama/Mistral",
+	  "sentence-transformers",
+	  "Tensorflow",
+	  "PyTorch Geometric",
+	  "Scikit-Learn",
+	  "XGBoost",
+	  "Graph Data Science"
+	]
+  } as const;
+  
 
 
 export const certificatesData = [
