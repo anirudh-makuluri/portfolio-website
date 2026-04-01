@@ -14,20 +14,20 @@ export const links = [
 		hash: "#home",
 	},
 	{
-		name: "About",
-		hash: "#about",
-	},
-	{
 		name: "Projects",
 		hash: "#projects",
 	},
 	{
-		name: "Skills",
-		hash: "#skills",
+		name: "About",
+		hash: "#about",
 	},
 	{
 		name: "Experience",
 		hash: "#experience",
+	},
+	{
+		name: "Skills",
+		hash: "#skills",
 	},
 	{
 		name: "Certificates",
@@ -43,7 +43,7 @@ export const experiencesData = [
 	{
 		title: "M.S Computer Science",
 		location: "Tempe, USA",
-		description: "Pursuing my Masters in Computer Science at Arizona State University",
+		description: "Graduate studies at Arizona State University focused on AI/ML, systems thinking, and applied engineering.",
 		icon: React.createElement(LuBook),
 		date: "August 2024 - Present"
 	},
@@ -51,7 +51,7 @@ export const experiencesData = [
 		title: "Software Engineer",
 		location: "Shardings",
 		description:
-			"I worked as a software engineer for Shardings for 1 year. I was responsible for maintaining both the front end and back end.",
+			"Built and maintained full-stack web and mobile product surfaces, working across frontend, backend, and real-time features in a fast-moving startup environment.",
 		icon: React.createElement(CgWorkAlt),
 		date: "June 2022 - August 2023",
 	},
@@ -67,7 +67,7 @@ export const experiencesData = [
 		title: "Software Engineer Intern",
 		location: "Shardings",
 		description:
-			"I worked as a Software Engineer Intern for Shardings. I developed a Google Calendar Workspace Add-on, payment system integration and UI enhancements.",
+			"Built product features including a Google Calendar Workspace add-on, payment integrations, and UI improvements that shipped to users.",
 		icon: React.createElement(CgWorkAlt),
 		date: "July 2021 - Dec 2021",
 	}
@@ -80,7 +80,7 @@ export const projectsData = [
 		tags: ["Gemini", "Next.js", "Tailwind CSS", "Firebase", "AWS", "Google Cloud Platform", "Docker", "Tanstack Query", "Zustand"],
 		imageUrl: smartdeployImg,
 		githubLink: "https://github.com/anirudh-makuluri/smart-deploy/",
-		liveLink: "https://smart-deploy.anirudh-makuluri.xyz/"
+		liveLink: "https://smart-deploy.xyz/"
 	},
 	{
 		title: "SD-Artifacts",
@@ -135,10 +135,10 @@ export const projectsData = [
 	{
 		title: "Chatify",
 		description: "Chatify is a real-time chat application featuring one-to-one and group messaging, voice and video calls, Google OAuth secure authentication, and responsive design.",
-		tags: ["Next.js", "React", "Node.js", "Firebase", "Socket.io", "WebRTC"],
+		tags: ["Next.js", "React", "React Native", "Node.js", "Firebase", "Socket.io", "WebRTC"],
 		imageUrl: chatifyImg,
-		githubLink: "https://github.com/anirudh-makuluri/chatify-next",
-		liveLink: "https://chatify-a.vercel.app/"
+		githubLink: "https://github.com/anirudh-makuluri/chatify",
+		liveLink: "https://chat.smart-deploy.xyz/"
 	},
 	{
 		title: "E-Commerce App",

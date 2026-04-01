@@ -38,13 +38,13 @@ export default function Chatbot() {
 				messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
 			}, 100);
 		}
-	}, [isOpen]);
+	}, [isOpen, messages.length]);
 
 	useEffect(() => {
 		if (isOpen && !isLoading) {
 			inputRef.current?.focus();
 		}
-	}, [isOpen, isLoading, messages]);
+	}, [isOpen, isLoading, messages.length]);
 
 	// Handle sending message
 	const handleSend = async () => {

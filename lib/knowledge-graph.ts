@@ -58,14 +58,15 @@ export function buildKnowledgeGraph(): KnowledgeGraph {
 		val: NODE_SIZES.person,
 		section: 'home',
 		metadata: {
-			role: 'Full-Stack Developer & AI/ML Engineer',
+			role: 'Full-Stack Engineer building AI, cloud, and developer tools',
 			education: 'M.S. Computer Science @ ASU',
 			citizenship: 'Indian Citizen',
 			location: 'United States'
 		}
 	});
 
-	// Visa/Work Authorization node
+	// Keep work authorization details in the knowledge graph for chatbot/context use,
+	// while omitting them from the main page copy.
 	const visaId = 'f1-visa';
 	nodes.push({
 		id: visaId,
@@ -85,7 +86,6 @@ export function buildKnowledgeGraph(): KnowledgeGraph {
 		}
 	});
 
-	// Link person to visa
 	links.push({
 		source: 'anirudh',
 		target: visaId,
@@ -373,5 +373,3 @@ export function findPath(
 	dfs(startId, endId, [], 0);
 	return paths;
 }
-
-

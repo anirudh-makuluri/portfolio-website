@@ -8,28 +8,28 @@ import { FaTrophy, FaCode, FaGraduationCap, FaStar } from "react-icons/fa";
 
 const achievementsData = [
   {
-    icon: FaGraduationCap,
-    title: "M.S. Computer Science",
-    description: "Pursuing Master's at Arizona State University with focus on AI/ML",
-    highlight: "Current"
-  },
-  {
     icon: FaCode,
-    title: "Full-Stack Development",
-    description: "Built production-ready applications with 1+ year of professional experience",
-    highlight: "Professional"
-  },
-  {
-    icon: FaStar,
-    title: "Multiple Certifications",
-    description: "Oracle Gen AI Professional, Machine Learning Specialization, Cloud Certified",
-    highlight: "Certified"
+    title: "Product Builder",
+    description: "Building and shipping full-stack products across developer tools, AI workflows, and real-time apps",
+    highlight: "Shipped"
   },
   {
     icon: FaTrophy,
-    title: "Published Projects",
-    description: "Created and deployed multiple full-stack applications serving real users",
-    highlight: "Live Projects"
+    title: "DevTools + Infra Focus",
+    description: "Created SmartDeploy and SD-Artifacts to automate repo analysis, artifact generation, and cloud deployment",
+    highlight: "Builder"
+  },
+  {
+    icon: FaStar,
+    title: "AI + Cloud Depth",
+    description: "Hands-on experience across GenAI, Bedrock, Gemini, Docker, AWS, GCP, and production-oriented systems",
+    highlight: "Certified"
+  },
+  {
+    icon: FaGraduationCap,
+    title: "Open to the Right Team",
+    description: "Focused primarily on building, while staying open to strong engineering roles where I can contribute fast",
+    highlight: "Selective"
   }
 ];
 

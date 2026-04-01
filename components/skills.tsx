@@ -29,7 +29,11 @@ export default function Skills() {
       ref={ref}
       className="mb-28 max-w-[53rem] scroll-mt-28 text-center sm:mb-40"
     >
-      <SectionHeading>My skills</SectionHeading>
+      <SectionHeading>Tools I reach for</SectionHeading>
+      <p className="mx-auto mb-10 max-w-[40rem] leading-7 text-gray-700 dark:text-white/75">
+        I work comfortably across product engineering, infrastructure, and AI systems, and I usually choose tools based
+        on what helps a product get shipped cleanly.
+      </p>
       <div className="space-y-8">
         {Object.entries(categorizedSkills).map(([category, skills], categoryIndex) => (
           <motion.div

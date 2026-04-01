@@ -15,8 +15,9 @@ export default function Project({
     tags,
     imageUrl,
     githubLink,
-    liveLink
-}: ProjectProps) {
+    liveLink,
+    compact = false
+}: ProjectProps & { compact?: boolean }) {
     const ref = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
         target: ref,
@@ -38,9 +39,14 @@ export default function Project({
                 transition: { duration: 0.2 }
             }}
         >
-            <section className="bg-gray-100 max-w-[42rem] border border-black/5 rounded-lg overflow-hidden sm:pr-8 relative sm:min-h-[20rem] hover:bg-gray-200 transition hover:shadow-xl sm:group-even:pl-8 dark:text-white dark:bg-white/10 dark:hover:bg-white/20">
-                <div className={`pt-4 pb-7 px-5 sm:pl-10 sm:pr-2 sm:pt-10 sm:pb-10 ${imageUrl ? "sm:max-w-[50%] sm:group-even:ml-[18rem]" : "sm:max-w-full"} flex flex-col`}>
-                    <h3 className="text-2xl font-semibold text-center sm:text-left">{title}</h3>
+            <section className={`bg-gray-100 max-w-[42rem] border border-black/5 rounded-lg overflow-hidden relative hover:bg-gray-200 transition hover:shadow-xl dark:text-white dark:bg-white/10 dark:hover:bg-white/20 ${compact ? "sm:pr-4" : "sm:pr-8 sm:min-h-[20rem] sm:group-even:pl-8"}`}>
+                <div className={`px-5 flex flex-col ${compact ? "pt-4 pb-6 sm:pl-8 sm:pr-6 sm:pt-7 sm:pb-7 sm:max-w-full" : `pt-4 pb-7 sm:pl-10 sm:pr-2 sm:pt-10 sm:pb-10 ${imageUrl ? "sm:max-w-[50%] sm:group-even:ml-[18rem]" : "sm:max-w-full"}`}`}>
+                    {!compact ? (
+                        <span className="mb-3 self-center rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-blue-900 sm:self-start dark:border-blue-400/30 dark:bg-blue-500/20 dark:text-blue-100">
+                            Flagship
+                        </span>
+                    ) : null}
+                    <h3 className={`${compact ? "text-xl" : "text-2xl"} font-semibold text-center sm:text-left`}>{title}</h3>
                     <p className="mt-2 leading-relaxed text-gray-700 dark:text-white/70">
                         {description}
                     </p>
@@ -81,7 +87,7 @@ export default function Project({
                 </div>
 
                     {
-                        imageUrl ? (
+                        imageUrl && !compact ? (
                             <div className="absolute hidden sm:block top-12 -right-40 w-[28.25rem] rounded-lg shadow-2xl bg-white p-3
                             transition 
                             group-hover:scale-[1.04]

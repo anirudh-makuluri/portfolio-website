@@ -29,10 +29,11 @@ export default function Contact() {
         once: true,
       }}
     >
-      <SectionHeading>Contact me</SectionHeading>
+      <SectionHeading>Let&apos;s talk</SectionHeading>
 
       <p className="text-gray-700 -mt-6 dark:text-white/80">
-        You can contact me directly at{" "}
+        If you&apos;re building something interesting, hiring for a product-minded engineer, or just want to connect,
+        you can reach me directly at{" "}
         <a className="underline" href="mailto:anirudh.makuluri@gmail.com">
           anirudh.makuluri@gmail.com
         </a>{" "}

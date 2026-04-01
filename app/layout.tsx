@@ -16,8 +16,9 @@ import Chatbot from "@/components/chatbot";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
+  metadataBase: new URL("https://anirudh-makuluri.xyz"),
   title: "Anirudh Makuluri | Full-Stack & AI/ML Developer",
-  description: "Full-Stack Developer and AI/ML Engineer specializing in React, Next.js, React Native, and Generative AI. Currently pursuing M.S. in Computer Science at Arizona State University.",
+  description: "Full-stack engineer building AI products, developer tools, and cloud-native applications with React, Next.js, React Native, and modern infrastructure.",
   keywords: [
     'Anirudh Makuluri', 
     'Anirudh Raghavendra Makuluri',
@@ -26,10 +27,11 @@ export const metadata = {
     'Next.js Developer',
     'React Native Developer',
     'AI/ML Engineer',
+    'Developer Tools',
+    'DevOps',
+    'Cloud Infrastructure',
     'Generative AI',
     'Machine Learning',
-    'Arizona State University',
-    'ASU',
     'Software Engineer',
     'Web Developer',
     'TypeScript',

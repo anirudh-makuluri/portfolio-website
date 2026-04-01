@@ -17,29 +17,28 @@ export default function About() {
       transition={{ delay: 0.175 }}
       id="about"
     >
-      <SectionHeading>About me</SectionHeading>
+      <SectionHeading>My story so far</SectionHeading>
       <p className="mb-3">
-        Currently pursuing an <span className="font-medium">M.S. in Computer Science at Arizona State University</span>, 
-        I'm specializing in <span className="font-medium">generative AI</span> and designing models that create rich, 
-        context-aware content to enhance user experiences.
+        I'm a <span className="font-medium">full-stack engineer and AI builder</span> focused on shipping practical products
+        across web, mobile, cloud, and developer tooling. Lately, that has meant building systems around
+        <span className="font-medium"> AI-assisted deployment, infrastructure generation, and real-time applications</span>.
       </p>
       
       <p className="mb-3">
-        After graduating from <span className="font-medium">BITS Pilani</span> in 2022 with a degree in Electronics & 
-        Instrumentation, I transitioned into software development and haven't looked back since. I've had the privilege 
-        of working at <span className="font-medium">Shardings</span> as a full-stack engineer, where I built scalable 
-        web and mobile applications using modern technologies.
+        I previously worked at <span className="font-medium">Shardings</span> as a full-stack engineer, where I built
+        scalable web and mobile experiences. Alongside that, I've been going deeper on systems, cloud, and applied AI
+        through both independent projects and graduate work at <span className="font-medium">Arizona State University</span>.
       </p>
 
       <p className="mb-3">
-        <span className="italic">What drives me?</span> I love the challenge of turning complex problems into elegant, 
-        user-friendly solutions. Whether it's building real-time communication systems with WebRTC, deploying AI models, 
-        or creating seamless mobile experiences with React Native, I'm always excited to learn and build something new.
+        <span className="italic">What drives me?</span> I like turning messy technical workflows into products that feel
+        simple to use. Whether it's deployment automation, repo analysis, knowledge systems, or real-time communication,
+        I enjoy building things that are both technically solid and genuinely useful.
       </p>
 
       <p>
-        <span className="font-medium">When I'm not coding</span>, you'll find me exploring the latest AI research papers, 
-        or experimenting with new frameworks and tools.
+        <span className="font-medium">When I'm not coding</span>, I'm usually digging through AI research, testing new
+        frameworks, or refining ideas into the next product worth shipping.
       </p>
     </motion.section>
   );
