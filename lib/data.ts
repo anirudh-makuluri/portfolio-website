@@ -69,7 +69,7 @@ export const experiencesData = [
 		description:
 			"Built and maintained full-stack web and mobile product surfaces, working across frontend, backend, and real-time features in a fast-moving startup environment.",
 		icon: React.createElement(CgWorkAlt),
-		date: "June 2022 - February 2024",
+		date: "June 2022 - August 2023",
 	},
 	{
 		title: "Graduated B.Tech",
