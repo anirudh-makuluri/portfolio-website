@@ -1,23 +1,47 @@
 "use client";
 
 import React from "react";
-import SectionHeading from "./section-heading";
+import Link from "next/link";
 import { motion } from "framer-motion";
-import { useSectionInView } from "@/lib/hooks";
-import { FaTrophy, FaCode, FaGraduationCap, FaStar } from "react-icons/fa";
+import { FaCode, FaGraduationCap, FaStar, FaTrophy } from "react-icons/fa";
+import SectionHeading from "./section-heading";
 
-const achievementsData = [
+type AchievementLink = {
+  label: string;
+  href: string;
+};
+
+type AchievementEntry = {
+  icon: React.ComponentType<{ className?: string }>;
+  title: string;
+  description: string;
+  highlight: string;
+  links?: AchievementLink[];
+};
+
+const achievementsData: AchievementEntry[] = [
+  {
+    icon: FaTrophy,
+    title: "Hackathon Wins",
+    description:
+      "Won 2nd Place in the Google Track, \"Build With AI: The Agentic Frontier,\" and 1st Place for Best Use of Auth0 AI Agents at Innovation Hacks 2.0 in April 2026. Built the frontend for TravelMate, an AI travel planner recognized among 300+ participants.",
+    highlight: "2 Awards",
+    links: [
+      {
+        label: "GitHub",
+        href: "https://github.com/anirudh-makuluri/travelMate"
+      },
+      {
+        label: "Devpost",
+        href: "https://devpost.com/software/travelmate-gvs09r"
+      }
+    ]
+  },
   {
     icon: FaCode,
     title: "Product Builder",
     description: "Building and shipping full-stack products across developer tools, AI workflows, and real-time apps",
     highlight: "Shipped"
-  },
-  {
-    icon: FaTrophy,
-    title: "DevTools + Infra Focus",
-    description: "Created SmartDeploy and SD-Artifacts to automate repo analysis, artifact generation, and cloud deployment",
-    highlight: "Builder"
   },
   {
     icon: FaStar,
@@ -34,18 +58,13 @@ const achievementsData = [
 ];
 
 export default function Achievements() {
-  const { ref } = useSectionInView("About", 0.5);
-
   return (
-    <section 
-      ref={ref} 
-      className="mb-28 max-w-[53rem] scroll-mt-28 text-center sm:mb-40"
-    >
+    <section className="mb-28 max-w-[53rem] scroll-mt-28 text-center sm:mb-40">
       <SectionHeading>Highlights</SectionHeading>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
         {achievementsData.map((achievement, index) => (
           <motion.div
-            key={index}
+            key={achievement.title}
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -56,26 +75,43 @@ export default function Achievements() {
               boxShadow: "0 20px 40px rgba(0, 0, 0, 0.15)",
               transition: { duration: 0.2 }
             }}
-            className="bg-white dark:bg-white/10 rounded-lg p-6 shadow-lg transition-transform border border-black/5 dark:border-white/10 cursor-default"
+            className="cursor-default rounded-lg border border-black/5 bg-white p-6 shadow-lg transition-transform dark:border-white/10 dark:bg-white/10"
           >
-            <div className="flex items-center gap-4 mb-3">
-              <div className="bg-blue-500 dark:bg-blue-600 p-3 rounded-full text-white">
+            <div className="mb-3 flex items-center gap-4">
+              <div className="rounded-full bg-blue-500 p-3 text-white dark:bg-blue-600">
                 <achievement.icon className="text-xl" />
               </div>
-              <div className="text-left flex-1">
-                <h3 className="font-semibold text-lg">{achievement.title}</h3>
-                <span className="text-xs bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 px-2 py-1 rounded-full">
+              <div className="flex-1 text-left">
+                <h3 className="text-lg font-semibold">{achievement.title}</h3>
+                <span className="rounded-full bg-blue-100 px-2 py-1 text-xs text-blue-700 dark:bg-blue-900/50 dark:text-blue-300">
                   {achievement.highlight}
                 </span>
               </div>
             </div>
-            <p className="text-gray-700 dark:text-white/70 text-sm text-left">
+            <p className="text-left text-sm text-gray-700 dark:text-white/70">
               {achievement.description}
             </p>
+            {achievement.links?.length ? (
+              <div className="mt-4 flex flex-wrap gap-3">
+                {achievement.links.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    target="_blank"
+                    className={`rounded-full px-4 py-2 text-sm transition hover:scale-105 ${
+                      link.label === "GitHub"
+                        ? "bg-gray-900 text-white dark:bg-white/10"
+                        : "bg-blue-600 text-white"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            ) : null}
           </motion.div>
         ))}
       </div>
     </section>
   );
 }
-

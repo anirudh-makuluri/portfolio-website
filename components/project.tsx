@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import { projectsData } from "@/lib/data";
+import { projectsData, type ProjectLink } from "@/lib/data";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
@@ -16,6 +16,7 @@ export default function Project({
     imageUrl,
     githubLink,
     liveLink,
+    projectLinks,
     compact = false
 }: ProjectProps & { compact?: boolean }) {
     const ref = useRef<HTMLDivElement>(null);
@@ -61,7 +62,22 @@ export default function Project({
                         ))}
                     </ul>
                     <div className="flex flex-wrap gap-3 mt-4">
-                        {githubLink && (
+                        {projectLinks?.length ? projectLinks.map((link: ProjectLink) => (
+                            <Link
+                                key={link.href}
+                                href={link.href}
+                                target="_blank"
+                                className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm hover:scale-105 transition ${
+                                    link.label === "GitHub"
+                                        ? "bg-gray-900 text-white dark:bg-white/10"
+                                        : "bg-blue-600 text-white"
+                                }`}
+                                onClick={(e) => e.stopPropagation()}
+                            >
+                                {link.label === "GitHub" ? <FaGithub /> : <FaExternalLinkAlt className="text-xs" />}
+                                {link.label === "GitHub" ? "Code" : link.label}
+                            </Link>
+                        )) : githubLink && (
                             <Link 
                                 href={githubLink} 
                                 target="_blank"

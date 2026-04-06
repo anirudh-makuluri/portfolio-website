@@ -1,4 +1,5 @@
 import React from "react";
+import type { StaticImageData } from "next/image";
 import { CgWorkAlt } from "react-icons/cg";
 import { LuGraduationCap, LuBook } from "react-icons/lu";
 import lexiguessImg from "@/public/lexiguess.png";
@@ -7,6 +8,21 @@ import codecraftImg from "@/public/codecraft.png";
 import smartdeployImg from "@/public/smartdeploy.png"
 import chatifyImg from "@/public/chatify.png"
 import accioImg from "@/public/accio.png"
+
+export type ProjectLink = {
+	label: string;
+	href: string;
+};
+
+export type ProjectEntry = {
+	title: string;
+	description: string;
+	tags: readonly string[];
+	imageUrl: StaticImageData | null;
+	githubLink: string | null;
+	liveLink: string | null;
+	projectLinks?: readonly ProjectLink[];
+};
 
 export const links = [
 	{
@@ -53,7 +69,7 @@ export const experiencesData = [
 		description:
 			"Built and maintained full-stack web and mobile product surfaces, working across frontend, backend, and real-time features in a fast-moving startup environment.",
 		icon: React.createElement(CgWorkAlt),
-		date: "June 2022 - August 2023",
+		date: "June 2022 - February 2024",
 	},
 	{
 		title: "Graduated B.Tech",
@@ -73,7 +89,7 @@ export const experiencesData = [
 	}
 ] as const;
 
-export const projectsData = [
+export const projectsData: readonly ProjectEntry[] = [
 	{
 		title: "SmartDeploy",
 		description: "Lightweight DevOps automation platform that connects your GitHub repo, auto-analyzes your stack with AI, and deploys to AWS services or Google Cloud Platform in just a few clicks.",
@@ -109,7 +125,7 @@ export const projectsData = [
 	{
 		title: "Shardings Meet",
 		description:
-			"I worked as a full-stack developer on this startup project for 1 year. Shardings-Meet offers customizable virtual environments for diverse virtual experiences.",
+			"I worked as a full-stack developer on this startup project. Shardings-Meet offers customizable virtual environments for diverse virtual experiences.",
 		tags: ["React", "React Native", "Node.js", "Firebase", "WebRTC", "Google Cloud Platform"],
 		imageUrl: shardingsImg,
 		githubLink: null,
@@ -139,6 +155,24 @@ export const projectsData = [
 		imageUrl: chatifyImg,
 		githubLink: "https://github.com/anirudh-makuluri/chatify",
 		liveLink: "https://chat.smart-deploy.xyz/"
+	},
+	{
+		title: "TravelMate",
+		description: "Hackathon-winning AI travel planner that turns preferences, trip constraints, and destination context into practical itineraries through a polished Next.js frontend and AI-powered planning system.",
+		tags: ["Next.js", "TypeScript", "Tailwind CSS", "FastAPI", "Google Gemini", "Auth0", "Google Maps"],
+		imageUrl: null,
+		githubLink: "https://github.com/anirudh-makuluri/travelMate",
+		liveLink: "https://travelmate.smart-deploy.xyz",
+		projectLinks: [
+			{
+				label: "GitHub",
+				href: "https://github.com/anirudh-makuluri/travelMate"
+			},
+			{
+				label: "Devpost",
+				href: "https://devpost.com/software/travelmate-gvs09r"
+			}
+		]
 	},
 	{
 		title: "E-Commerce App",

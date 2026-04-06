@@ -1,3 +1,4 @@
+import Achievements from "@/components/achievements";
 import About from "@/components/about";
 import Certificates from "@/components/certificates";
 import Contact from "@/components/contact";
@@ -12,6 +13,7 @@ export default function Home() {
     <main className="flex flex-col items-center px-4">
       <Intro />
       <SectionDivider />
+      <Achievements />
       <Projects />
       <About />
       <Experience />

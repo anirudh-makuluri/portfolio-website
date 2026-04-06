@@ -9,11 +9,11 @@ import { useSectionInView } from "@/lib/hooks";
 export default function Projects() {
   const { ref } = useSectionInView("Projects", 0.5);
   const featuredProjects = projectsData.filter((project) =>
-    ["SmartDeploy", "SD-Artifacts", "Chatify"].includes(project.title)
+    ["SmartDeploy", "SD-Artifacts", "TravelMate", "Chatify"].includes(project.title)
   );
   const otherProjects = projectsData.filter(
     (project) =>
-      !["SmartDeploy", "SD-Artifacts", "Chatify"].includes(project.title)
+      !["SmartDeploy", "SD-Artifacts", "TravelMate", "Chatify"].includes(project.title)
   );
 
   return (
