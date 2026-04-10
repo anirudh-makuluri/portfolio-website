@@ -37,10 +37,10 @@ export default function Intro() {
             <Image
               src={profileImg}
               alt="Anirudh portrait"
-              width="192"
-              height="192"
-              quality="95"
-              priority={true}
+              width={192}
+              height={192}
+              quality={95}
+              priority
               className="h-28 w-28 rounded-full object-cover sm:h-32 sm:w-32"
             />
           </motion.div>

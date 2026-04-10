@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import Header from "@/components/header";
 import "./globals.css";
 import { Inter } from "next/font/google";
@@ -86,7 +87,9 @@ export default function RootLayout({
             <GraphHighlightProvider>
               <Header />
               {children}
-              <Footer />
+              <Suspense>
+                <Footer />
+              </Suspense>
 
               <Toaster position="top-right" />
               <ThemeSwitch />

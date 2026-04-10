@@ -1,3 +1,4 @@
+import { cacheLife, cacheTag } from "next/cache";
 import { projectsData, skillsData, experiencesData, certificatesData } from "./data";
 
 export interface GraphNode {
@@ -297,6 +298,14 @@ export function buildKnowledgeGraph(): KnowledgeGraph {
 	});
 
 	return { nodes, links };
+}
+
+export async function getCachedKnowledgeGraph(): Promise<KnowledgeGraph> {
+	"use cache";
+	cacheLife("max");
+	cacheTag("knowledge-graph");
+
+	return buildKnowledgeGraph();
 }
 
 // Helper function to get nodes by section

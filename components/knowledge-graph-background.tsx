@@ -12,7 +12,7 @@ const ForceGraph2D = dynamic(() => import('react-force-graph-2d'), {
 });
 
 export default function KnowledgeGraphBackground() {
-	const graphRef = useRef<any>();
+	const graphRef = useRef<any>(null);
 	const [graph, setGraph] = useState<KnowledgeGraph>({ nodes: [], links: [] });
 	const { highlightedNodes } = useGraphHighlight();
 	const [dimensions, setDimensions] = useState({ width: 400, height: 800 });

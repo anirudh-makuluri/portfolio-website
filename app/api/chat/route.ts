@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { GoogleGenerativeAI } from '@google/generative-ai';
-import { buildKnowledgeGraph, queryGraph, getConnectedNodes } from '@/lib/knowledge-graph';
+import { getCachedKnowledgeGraph, queryGraph, getConnectedNodes } from '@/lib/knowledge-graph';
 
 // Initialize Gemini AI
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || '');
@@ -25,8 +25,7 @@ export async function POST(request: NextRequest) {
 			);
 		}
 
-		// Build knowledge graph
-		const graph = buildKnowledgeGraph();
+		const graph = await getCachedKnowledgeGraph();
 
 		// Query the graph for relevant nodes
 		const relevantNodes = queryGraph(message.toLowerCase(), graph);

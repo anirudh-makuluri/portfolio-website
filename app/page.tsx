@@ -1,3 +1,4 @@
+import { cacheLife, cacheTag } from "next/cache";
 import Achievements from "@/components/achievements";
 import About from "@/components/about";
 import Certificates from "@/components/certificates";
@@ -8,7 +9,11 @@ import Projects from "@/components/projects";
 import SectionDivider from "@/components/section-divider";
 import Skills from "@/components/skills";
 
-export default function Home() {
+export default async function Home() {
+  "use cache";
+  cacheLife("max");
+  cacheTag("portfolio");
+
   return (
     <main className="flex flex-col items-center px-4">
       <Intro />
@@ -18,7 +23,7 @@ export default function Home() {
       <About />
       <Experience />
       <Skills />
-      <Certificates/>
+      <Certificates />
       <Contact />
     </main>
   );

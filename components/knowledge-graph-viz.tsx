@@ -26,7 +26,7 @@ export default function KnowledgeGraphViz({
 	onNodeClick,
 	className = '',
 }: KnowledgeGraphVizProps) {
-	const graphRef = useRef<any>();
+	const graphRef = useRef<any>(null);
 	const [graph, setGraph] = useState<KnowledgeGraph>({ nodes: [], links: [] });
 	const [selectedNode, setSelectedNode] = useState<GraphNode | null>(null);
 	const [hoveredNode, setHoveredNode] = useState<GraphNode | null>(null);
