@@ -5,7 +5,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { BsArrowRight, BsLinkedin } from "react-icons/bs";
-import { HiDownload } from "react-icons/hi";
+import { HiEye } from "react-icons/hi";
 import { FaGithubSquare } from "react-icons/fa";
 import { TypeAnimation } from "react-type-animation";
 import { useSectionInView } from "@/lib/hooks";
@@ -56,7 +56,7 @@ export default function Intro() {
           Hello, I&apos;m{" "}
           <TypeAnimation
             sequence={[
-              "Anirudh Raghavendra Makuluri",
+              "Anirudh Makuluri",
               2000,
               "a Full-Stack Developer",
               2000,
@@ -102,12 +102,13 @@ export default function Intro() {
         </Link>
 
         <a
-          className="group flex cursor-pointer items-center gap-2 rounded-full bg-white px-7 py-3 outline-none transition focus:scale-110 active:scale-105 dark:bg-white/10 borderBlack hover:scale-110"
+          className="group flex cursor-pointer items-center gap-2 rounded-full bg-white px-7 py-3 outline-none transition dark:bg-white/10 borderBlack hover:scale-110"
           href="/Anirudh_Raghavendra_Makuluri_resume.pdf"
-          download
+			target="_blank"
+			rel="noreferrer"
         >
-          Download CV{" "}
-          <HiDownload className="opacity-60 transition group-hover:translate-y-1" />
+          View CV{" "}
+          <HiEye className="opacity-60 transition group-hover:scale-110" />
         </a>
 
         <a

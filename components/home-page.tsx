@@ -100,7 +100,8 @@ export default function HomePage() {
                 </a>
                 <a
                   href="/Anirudh_Raghavendra_Makuluri_resume.pdf"
-                  download
+                  target="_blank"
+                  rel="noreferrer"
                   className="inline-flex items-center gap-2 rounded-full border border-black/10 px-3 py-2 transition hover:border-black/20 hover:text-gray-950 dark:border-white/10 dark:hover:border-white/20 dark:hover:text-white"
                 >
                   Resume
