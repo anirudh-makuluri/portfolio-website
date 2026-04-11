@@ -10,9 +10,19 @@ import { FaGithubSquare } from "react-icons/fa";
 import { TypeAnimation } from "react-type-animation";
 import { useSectionInView } from "@/lib/hooks";
 import { useActiveSectionContext } from "@/context/active-section-context";
+import { useViewMode } from "@/context/view-mode-context";
 import profileImg from "@/public/linkedin_pfp.jpg";
+import IntroRPG from "./rpg/intro-rpg";
 
 export default function Intro() {
+  const { viewMode, triggerTransition } = useViewMode();
+
+  if (viewMode === "rpg") return <IntroRPG />;
+
+  return <IntroSimple onStartQuest={() => triggerTransition("rpg")} />;
+}
+
+function IntroSimple({ onStartQuest }: { onStartQuest: () => void }) {
   const { ref } = useSectionInView("Home", 0.5);
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
 
@@ -126,6 +136,19 @@ export default function Intro() {
           <FaGithubSquare />
         </a>
       </motion.div>
+
+      <motion.button
+        className="mt-10 group relative font-[family-name:var(--font-pixel)] text-[9px] sm:text-[10px] text-gray-500 dark:text-gray-500 hover:text-yellow-500 dark:hover:text-yellow-400 transition-all duration-300"
+        onClick={onStartQuest}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.6 }}
+        whileHover={{ scale: 1.05 }}
+      >
+        <span className="relative z-10 border-2 border-dashed border-gray-400 dark:border-gray-600 group-hover:border-yellow-500 dark:group-hover:border-yellow-500 px-6 py-3 inline-block transition-colors">
+          🎮 ENTER GAME MODE 🎮
+        </span>
+      </motion.button>
     </section>
   );
 }

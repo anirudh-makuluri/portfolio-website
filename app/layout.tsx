@@ -1,20 +1,12 @@
 import { Suspense } from "react";
-import Header from "@/components/header";
 import "./globals.css";
-import { Inter } from "next/font/google";
-import ActiveSectionContextProvider from "@/context/active-section-context";
-import { GraphHighlightProvider } from "@/context/graph-highlight-context";
-import Footer from "@/components/footer";
-import ThemeSwitch from "@/components/theme-switch";
-import ThemeContextProvider from "@/context/theme-context";
-import { Toaster } from "react-hot-toast";
-import { Analytics } from '@vercel/analytics/react';
-import ScrollToTop from "@/components/scroll-to-top";
-import AnimatedBackground from "@/components/background";
-import Chatbot from "@/components/chatbot";
-
+import { Inter, Press_Start_2P } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
+import AppShell from "@/components/app-shell";
+import AppShellFallback from "@/components/app-shell-fallback";
 
 const inter = Inter({ subsets: ["latin"] });
+const pressStart2P = Press_Start_2P({ weight: "400", subsets: ["latin"], variable: "--font-pixel" });
 
 export const metadata = {
   metadataBase: new URL("https://anirudh-makuluri.xyz"),
@@ -76,29 +68,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="!scroll-smooth dark">
+    <html lang="en" className="!scroll-smooth dark" suppressHydrationWarning>
       <body
-        className={`${inter.className} bg-transparent text-gray-950 relative pt-28 sm:pt-36 dark:bg-transparent dark:text-gray-50 dark:text-opacity-90`}
+        className={`${inter.className} ${pressStart2P.variable} bg-transparent text-gray-950 relative pt-28 sm:pt-36 dark:bg-transparent dark:text-gray-50 dark:text-opacity-90`}
+        suppressHydrationWarning
       >
-        <AnimatedBackground />
-
-        <ThemeContextProvider>
-          <ActiveSectionContextProvider>
-            <GraphHighlightProvider>
-              <Header />
-              {children}
-              <Suspense>
-                <Footer />
-              </Suspense>
-
-              <Toaster position="top-right" />
-              <ThemeSwitch />
-              <ScrollToTop />
-              <Chatbot />
-            </GraphHighlightProvider>
-          </ActiveSectionContextProvider>
-        </ThemeContextProvider>
-		<Analytics/>
+        <Suspense fallback={<AppShellFallback />}>
+          <AppShell>{children}</AppShell>
+        </Suspense>
+        <Analytics />
       </body>
     </html>
   );

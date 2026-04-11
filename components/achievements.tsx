@@ -5,6 +5,8 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { FaCode, FaGraduationCap, FaStar, FaTrophy } from "react-icons/fa";
 import SectionHeading from "./section-heading";
+import { useViewMode } from "@/context/view-mode-context";
+import AchievementsRPG from "./rpg/achievements-rpg";
 
 type AchievementLink = {
   label: string;
@@ -58,8 +60,13 @@ const achievementsData: AchievementEntry[] = [
 ];
 
 export default function Achievements() {
+  const { viewMode } = useViewMode();
+  if (viewMode === "rpg") return <AchievementsRPG />;
   return (
-    <section className="mb-28 max-w-[53rem] scroll-mt-28 text-center sm:mb-40">
+    <section
+      id="achievements"
+      className="mb-28 max-w-[53rem] scroll-mt-28 text-center sm:mb-40"
+    >
       <SectionHeading>Highlights</SectionHeading>
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
         {achievementsData.map((achievement, index) => (

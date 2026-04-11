@@ -10,8 +10,16 @@ import "react-vertical-timeline-component/style.min.css";
 import { experiencesData } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
 import { useTheme } from "@/context/theme-context";
+import { useViewMode } from "@/context/view-mode-context";
+import ExperienceRPG from "./rpg/experience-rpg";
 
 export default function Experience() {
+  const { viewMode } = useViewMode();
+  if (viewMode === "rpg") return <ExperienceRPG />;
+  return <ExperienceSimple />;
+}
+
+function ExperienceSimple() {
   const { ref } = useSectionInView("Experience");
   const { theme } = useTheme();
 

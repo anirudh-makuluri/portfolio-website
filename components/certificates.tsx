@@ -5,8 +5,16 @@ import React from 'react'
 import SectionHeading from "./section-heading";
 import { certificatesData } from '@/lib/data';
 import Certificate from './certificate';
+import { useViewMode } from "@/context/view-mode-context";
+import CertificatesRPG from "./rpg/certificates-rpg";
 
 export default function Certificates() {
+    const { viewMode } = useViewMode();
+    if (viewMode === "rpg") return <CertificatesRPG />;
+    return <CertificatesSimple />;
+}
+
+function CertificatesSimple() {
     const { ref } = useSectionInView("Certificates");
 
     return (

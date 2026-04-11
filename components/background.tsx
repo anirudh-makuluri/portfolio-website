@@ -2,9 +2,14 @@
 
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { useViewMode } from "@/context/view-mode-context";
+import BackgroundRPG from "./rpg/background-rpg";
 
 export default function AnimatedBackground() {
+  const { viewMode } = useViewMode();
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  if (viewMode === "rpg") return <BackgroundRPG />;
 
   // useEffect(() => {
   //   const handleMouseMove = (e: MouseEvent) => {

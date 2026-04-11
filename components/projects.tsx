@@ -5,8 +5,16 @@ import SectionHeading from "./section-heading";
 import { projectsData } from "@/lib/data";
 import Project from "./project";
 import { useSectionInView } from "@/lib/hooks";
+import { useViewMode } from "@/context/view-mode-context";
+import ProjectsRPG from "./rpg/projects-rpg";
 
 export default function Projects() {
+  const { viewMode } = useViewMode();
+  if (viewMode === "rpg") return <ProjectsRPG />;
+  return <ProjectsSimple />;
+}
+
+function ProjectsSimple() {
   const { ref } = useSectionInView("Projects", 0.5);
   const featuredProjects = projectsData.filter((project) =>
     ["SmartDeploy", "SD-Artifacts", "TravelMate", "Chatify"].includes(project.title)

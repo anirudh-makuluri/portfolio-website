@@ -6,8 +6,18 @@ import { links } from "@/lib/data";
 import Link from "next/link";
 import clsx from "clsx";
 import { useActiveSectionContext } from "@/context/active-section-context";
+import { useViewMode } from "@/context/view-mode-context";
+import HeaderRPG from "./rpg/header-rpg";
 
 export default function Header() {
+  const { viewMode } = useViewMode();
+
+  if (viewMode === "rpg") return <HeaderRPG />;
+
+  return <HeaderSimple />;
+}
+
+function HeaderSimple() {
   const { activeSection, setActiveSection, setTimeOfLastClick } =
     useActiveSectionContext();
 

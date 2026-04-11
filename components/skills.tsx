@@ -5,6 +5,8 @@ import SectionHeading from "./section-heading";
 import { categorizedSkills } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
 import { motion } from "framer-motion";
+import { useViewMode } from "@/context/view-mode-context";
+import SkillsRPG from "./rpg/skills-rpg";
 
 const fadeInAnimationVariants = {
   initial: {
@@ -21,6 +23,14 @@ const fadeInAnimationVariants = {
 };
 
 export default function Skills() {
+  const { viewMode } = useViewMode();
+
+  if (viewMode === "rpg") return <SkillsRPG />;
+
+  return <SkillsSimple />;
+}
+
+function SkillsSimple() {
   const { ref } = useSectionInView("Skills");
 
   return (

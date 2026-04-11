@@ -7,8 +7,16 @@ import { useSectionInView } from "@/lib/hooks";
 import { sendEmail } from "@/actions/sendEmail";
 import SubmitBtn from "./submit-btn";
 import toast from "react-hot-toast";
+import { useViewMode } from "@/context/view-mode-context";
+import ContactRPG from "./rpg/contact-rpg";
 
 export default function Contact() {
+  const { viewMode } = useViewMode();
+  if (viewMode === "rpg") return <ContactRPG />;
+  return <ContactSimple />;
+}
+
+function ContactSimple() {
   const { ref } = useSectionInView("Contact");
 
   return (

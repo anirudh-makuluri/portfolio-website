@@ -4,8 +4,16 @@ import React from "react";
 import SectionHeading from "./section-heading";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
+import { useViewMode } from "@/context/view-mode-context";
+import AboutRPG from "./rpg/about-rpg";
 
 export default function About() {
+  const { viewMode } = useViewMode();
+  if (viewMode === "rpg") return <AboutRPG />;
+  return <AboutSimple />;
+}
+
+function AboutSimple() {
   const { ref } = useSectionInView("About");
 
   return (

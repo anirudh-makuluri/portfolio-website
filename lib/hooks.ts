@@ -1,5 +1,7 @@
 import { useActiveSectionContext } from "@/context/active-section-context";
 import { useGraphHighlight } from "@/context/graph-highlight-context";
+import { useViewMode } from "@/context/view-mode-context";
+import { useRpgWorldScrollOptional } from "@/context/rpg-world-scroll-context";
 import { useEffect, useRef } from "react";
 import type { SectionName } from "./types";
 import { buildKnowledgeGraph, getNodesBySection } from "./knowledge-graph";
@@ -8,10 +10,26 @@ export function useSectionInView(sectionName: SectionName, threshold = 0.35) {
   const ref = useRef<HTMLElement | null>(null);
   const { setActiveSection, timeOfLastClick } = useActiveSectionContext();
   const { setHighlightedNodes } = useGraphHighlight();
+  const { viewMode } = useViewMode();
+  const rpgScroll = useRpgWorldScrollOptional();
+  const scrollEpoch = rpgScroll?.scrollContainerEpoch ?? 0;
 
   useEffect(() => {
     const handleScroll = () => {
       if (!ref.current || Date.now() - timeOfLastClick <= 1000) {
+        return;
+      }
+
+      const container = rpgScroll?.containerRef.current;
+
+      if (viewMode === "rpg" && container) {
+        const cRect = container.getBoundingClientRect();
+        const r = ref.current.getBoundingClientRect();
+        const centerX = cRect.left + cRect.width / 2;
+        const overlapsHoriz = r.left <= centerX && r.right >= centerX;
+        if (overlapsHoriz) {
+          setActiveSection(sectionName);
+        }
         return;
       }
 
@@ -34,11 +52,25 @@ export function useSectionInView(sectionName: SectionName, threshold = 0.35) {
     window.addEventListener("scroll", handleScroll, { passive: true });
     window.addEventListener("resize", handleScroll);
 
+    const container = rpgScroll?.containerRef.current;
+    if (viewMode === "rpg" && container) {
+      container.addEventListener("scroll", handleScroll, { passive: true });
+    }
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleScroll);
+      container?.removeEventListener("scroll", handleScroll);
     };
-  }, [setActiveSection, timeOfLastClick, sectionName, threshold]);
+  }, [
+    setActiveSection,
+    timeOfLastClick,
+    sectionName,
+    threshold,
+    viewMode,
+    rpgScroll,
+    scrollEpoch,
+  ]);
 
   // Highlight graph nodes when section is in view (DISABLED FOR NOW)
   // useEffect(() => {

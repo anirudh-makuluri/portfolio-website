@@ -2,8 +2,14 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import { useViewMode } from "@/context/view-mode-context";
+import SectionDividerRPG from "./rpg/section-divider-rpg";
 
 export default function SectionDivider() {
+  const { viewMode } = useViewMode();
+
+  if (viewMode === "rpg") return <SectionDividerRPG />;
+
   return (
     <motion.div
       className="bg-gray-200 my-24 h-16 w-1 rounded-full hidden sm:block dark:bg-opacity-20"
