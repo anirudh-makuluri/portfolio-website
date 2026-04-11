@@ -107,6 +107,14 @@ export const projectsData: readonly ProjectEntry[] = [
 		liveLink: null
 	},
 	{
+		title: "what-if-million-users",
+		description: "Scale-focused backend systems series built around one question: what does this look like when a million users show up?",
+		tags: ["Go", "Gin", "Redis", "DynamoDB", "Kafka", "Prometheus", "Docker Compose", "Kubernetes"],
+		imageUrl: null,
+		githubLink: "https://github.com/anirudh-makuluri/what-if-million-users",
+		liveLink: null
+	},
+	{
 		title: "Accio — PDF RAG Knowledge System",
 		description: "End-to-end PDF knowledge extraction and Q&A system that ingests documents, builds a Neo4j knowledge graph with local vector embeddings, and powers a Streamlit chat UI with grounded citations and PDF highlights.",
 		tags: ["RAG", "Neo4j", "FastAPI", "Streamlit", "sentence-transformers", "Docker", "Google Gemini"],

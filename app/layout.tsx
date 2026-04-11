@@ -1,18 +1,13 @@
-import { Suspense } from "react";
-import Header from "@/components/header";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import ActiveSectionContextProvider from "@/context/active-section-context";
 import { GraphHighlightProvider } from "@/context/graph-highlight-context";
-import Footer from "@/components/footer";
-import ThemeSwitch from "@/components/theme-switch";
 import ThemeContextProvider from "@/context/theme-context";
 import { Toaster } from "react-hot-toast";
 import { Analytics } from '@vercel/analytics/react';
-import ScrollToTop from "@/components/scroll-to-top";
 import AnimatedBackground from "@/components/background";
-import Chatbot from "@/components/chatbot";
-
+import { SiteModeProvider } from "@/context/site-mode-context";
+import SiteChrome from "@/components/site-chrome";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -76,27 +71,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="!scroll-smooth dark">
+    <html lang="en" className="!scroll-smooth dark" suppressHydrationWarning>
       <body
-        className={`${inter.className} bg-transparent text-gray-950 relative pt-28 sm:pt-36 dark:bg-transparent dark:text-gray-50 dark:text-opacity-90`}
+        className={`${inter.className} relative bg-transparent text-gray-950 dark:bg-transparent dark:text-gray-50 dark:text-opacity-90`}
       >
         <AnimatedBackground />
 
         <ThemeContextProvider>
-          <ActiveSectionContextProvider>
-            <GraphHighlightProvider>
-              <Header />
-              {children}
-              <Suspense>
-                <Footer />
-              </Suspense>
-
-              <Toaster position="top-right" />
-              <ThemeSwitch />
-              <ScrollToTop />
-              <Chatbot />
-            </GraphHighlightProvider>
-          </ActiveSectionContextProvider>
+          <SiteModeProvider>
+            <ActiveSectionContextProvider>
+              <GraphHighlightProvider>
+                <SiteChrome>{children}</SiteChrome>
+                <Toaster position="top-right" />
+              </GraphHighlightProvider>
+            </ActiveSectionContextProvider>
+          </SiteModeProvider>
         </ThemeContextProvider>
 		<Analytics/>
       </body>
