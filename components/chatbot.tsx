@@ -71,12 +71,19 @@ export default function Chatbot() {
 
 			const data = await response.json();
 
-			// Handle timeout or error responses
-			if (data.error || response.status === 408) {
+			// Handle timeout, rate limit, or other error responses
+			if (data.error || response.status === 408 || response.status === 429) {
+				const retryAfter = typeof data.retryAfter === 'number' ? data.retryAfter : null;
+				const rateLimitMessage = retryAfter
+					? `You're sending messages too quickly. Please wait about ${retryAfter} seconds and try again.`
+					: "You're sending messages too quickly. Please wait a moment and try again.";
 				const errorMessage: Message = {
 					id: (Date.now() + 1).toString(),
 					role: 'assistant',
-					content: data.response || data.error || "I apologize, but I'm experiencing a delay. Could you please try asking your question again?",
+					content:
+						response.status === 429
+							? rateLimitMessage
+							: data.response || data.error || "I apologize, but I'm experiencing a delay. Could you please try asking your question again?",
 				};
 				setMessages(prev => [...prev, errorMessage]);
 			} else {

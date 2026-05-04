@@ -1,13 +1,44 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { getCachedKnowledgeGraph, queryGraph, getConnectedNodes } from '@/lib/knowledge-graph';
+import { rateLimit } from '@limity/core';
 
 // Initialize Gemini AI
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || '');
+const CHAT_LIMIT = 2;
+const CHAT_WINDOW_SECONDS = 60;
 
 // Graph-RAG with Gemini implementation
 export async function POST(request: NextRequest) {
 	try {
+		const clientId = getClientId(request);
+		const rateLimitResult = await rateLimit({
+			key: `chat:${clientId}`,
+			limit: CHAT_LIMIT,
+			window: CHAT_WINDOW_SECONDS,
+		});
+
+		if (!rateLimitResult.allowed) {
+			const retryAfterSeconds = Math.max(
+				rateLimitResult.reset - Math.floor(Date.now() / 1000),
+				1
+			);
+
+			return NextResponse.json(
+				{
+					error: `Too many chat requests. Please retry in about ${retryAfterSeconds}s.`,
+					response: `You are sending messages too quickly. Please wait about ${retryAfterSeconds} seconds and try again.`,
+					retryAfter: retryAfterSeconds,
+				},
+				{
+					status: 429,
+					headers: {
+						'Retry-After': String(retryAfterSeconds),
+					},
+				}
+			);
+		}
+
 		const { message, history } = await request.json();
 
 		if (!message) {
@@ -128,6 +159,23 @@ INSTRUCTIONS:
 	}
 }
 
+function getClientId(request: NextRequest): string {
+	const forwardedFor = request.headers.get('x-forwarded-for');
+	if (forwardedFor) {
+		const firstIp = forwardedFor.split(',')[0]?.trim();
+		if (firstIp) {
+			return firstIp;
+		}
+	}
+
+	const realIp = request.headers.get('x-real-ip');
+	if (realIp) {
+		return realIp;
+	}
+
+	return 'unknown-client';
+}
+
 // Build comprehensive context from knowledge graph
 function buildKnowledgeGraphContext(graph: any, relevantNodes: any[]): string {
 	const nodeDetails: string[] = [];
@@ -166,6 +214,5 @@ function buildKnowledgeGraphContext(graph: any, relevantNodes: any[]): string {
 
 	return nodeDetails.join('\n');
 }
-
 
 
