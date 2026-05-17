@@ -61,7 +61,7 @@ export const experiencesData = [
 		location: "Tempe, USA",
 		description: "Graduate studies at Arizona State University focused on AI/ML, systems thinking, and applied engineering.",
 		icon: React.createElement(LuBook),
-		date: "August 2024 - Present"
+		date: "August 2024 - May 2026"
 	},
 	{
 		title: "Software Engineer",
