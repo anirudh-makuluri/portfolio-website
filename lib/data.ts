@@ -89,19 +89,136 @@ export const experiencesData = [
 	}
 ] as const;
 
+export type WorkEntry = {
+	role: string;
+	company: string;
+	period: string;
+	location: string;
+	summary: string;
+	highlights: readonly string[];
+	stack: readonly string[];
+};
+
+export const workExperienceData: readonly WorkEntry[] = [
+	{
+		role: "Software Engineer",
+		company: "Shardings",
+		period: "Jun 2022 — Aug 2023",
+		location: "Remote · India",
+		summary:
+			"Built and scaled production collaboration features across web, mobile, backend, and cloud infrastructure for a 12K+ user platform.",
+		highlights: [
+			"Co-led platform scaling from VM-based deployments to GKE, improving reliability for web, backend, and real-time media services",
+			"Owned Node.js APIs and WebSocket systems powering meetings, messaging, session sync, payments, and live collaboration workflows",
+			"Shipped AI meeting summaries, CDN performance improvements, and mobile/web release workflows that improved product reliability and user experience",
+		],
+		stack: ["React", "React Native", "Node.js", "Firebase", "GCP", "GKE", "WebRTC", "Socket.IO"],
+	},
+	{
+		role: "Software Engineer · Intern",
+		company: "Shardings",
+		period: "Jul 2021 — Dec 2021",
+		location: "Remote · India",
+		summary:
+			"First production codebase. Picked features, shipped them, and watched real users use them.",
+		highlights: [
+			"Built a Google Calendar Workspace add-on used inside the product",
+			"Integrated payments and improved core UI flows that made it into the next release",
+		],
+		stack: ["JavaScript", "Node.js", "Google Workspace APIs", "Firebase"],
+	},
+] as const;
+
+export type EducationEntry = {
+	degree: string;
+	school: string;
+	period: string;
+	location: string;
+	summary: string;
+	focus: readonly string[];
+};
+
+export type RecommendationEntry = {
+	name: string;
+	role: string;
+	relation: string;
+	avatar: string;
+	quote: string;
+	link?: string;
+};
+
+export const recommendationsData: readonly RecommendationEntry[] = [
+	{
+		name: "Devesh Mittal",
+		role: "Founder & CEO @ Shardings",
+		relation: "Managed Anirudh directly at Shardings",
+		avatar: "/mittal.jpg",
+		quote:
+			"Anirudh was a core member of the Shardings Meet team and consistently took ownership across multiple areas, from engineering the video player to building the Android and iOS applications. He is a versatile engineer with strong technical skills and the ability to work effectively across platforms. I would highly recommend Anirudh for any software engineering role.",
+	},
+] as const;
+
+export const educationData: readonly EducationEntry[] = [
+	{
+		degree: "M.S. Computer Science",
+		school: "Arizona State University",
+		period: "Aug 2024 — May 2026",
+		location: "Tempe, AZ",
+		summary:
+			"Graduate work focused on AI/ML, distributed systems, and turning research-shaped ideas into things that ship.",
+		focus: ["Applied AI", "Cloud Systems", "Graph ML", "Product Building"],
+	},
+	{
+		degree: "B.Tech. Electronics & Instrumentation",
+		school: "BITS Pilani, Hyderabad",
+		period: "2018 — 2022",
+		location: "Hyderabad, India",
+		summary:
+			"Engineering fundamentals with a long detour through software — most of college was spent building side projects and learning the web stack.",
+		focus: ["Signals & Systems", "FPGA Development", "Embedded", "Self-taught Full-Stack"],
+	},
+] as const;
+
 export const projectsData: readonly ProjectEntry[] = [
 	{
 		title: "SmartDeploy",
-		description: "Lightweight DevOps automation platform that connects your GitHub repo, auto-analyzes your stack with AI, and deploys to AWS services or Google Cloud Platform in just a few clicks.",
-		tags: ["Gemini", "Next.js", "Tailwind CSS", "Firebase", "AWS", "Google Cloud Platform", "Docker", "Tanstack Query", "Zustand"],
+		description:
+			"Preview-driven DevOps automation platform that analyzes your GitHub repo, shows the deployment path before release, and deploys static and server apps to AWS with automated builds, DNS, secrets, monitoring, health checks, and rollback.",
+		tags: [
+			"Next.js",
+			"TypeScript",
+			"AWS ECS",
+			"AWS Fargate",
+			"S3",
+			"CloudFront",
+			"Route 53",
+			"CodeBuild",
+			"Secrets Manager",
+			"CloudWatch",
+			"PostgreSQL",
+			"TanStack Query",
+			"Zustand"
+		],
 		imageUrl: smartdeployImg,
 		githubLink: "https://github.com/anirudh-makuluri/smart-deploy/",
 		liveLink: "https://smart-deploy.xyz/"
 	},
 	{
 		title: "SD-Artifacts",
-		description: "LLM-powered repo analyzer powering SmartDeploy that scans a GitHub project, infers its stack, and generates production-ready Dockerfile, docker-compose, and nginx configs with hadolint checks.",
-		tags: ["LangGraph", "FastAPI", "Claude Haiku", "Amazon Bedrock", "Supabase", "GitHub API", "Docker"],
+		description:
+			"Repository analysis engine for SmartDeploy that inspects a GitHub project, infers its app type and deployment requirements, and returns structured deployment metadata used to route apps to AWS services.",
+		tags: [
+			"LangGraph",
+			"FastAPI",
+			"Amazon Bedrock",
+			"Supabase",
+			"GitHub API",
+			"AWS ECS",
+			"S3",
+			"CloudFront",
+			"Route 53",
+			"Secrets Manager"
+		],
 		imageUrl: null,
 		githubLink: "https://github.com/anirudh-makuluri/sd-artifacts",
 		liveLink: null
@@ -130,36 +247,48 @@ export const projectsData: readonly ProjectEntry[] = [
 		githubLink: "https://github.com/anirudh-makuluri/graphstream_dps",
 		liveLink: null
 	},
+	// {
+	// 	title: "Shardings Meet",
+	// 	description:
+	// 		"I worked as a full-stack developer on this startup project. Shardings-Meet offers customizable virtual environments for diverse virtual experiences.",
+	// 	tags: ["React", "React Native", "Node.js", "Firebase", "WebRTC", "Google Cloud Platform"],
+	// 	imageUrl: shardingsImg,
+	// 	githubLink: null,
+	// 	liveLink: "https://shardings.com/"
+	// },
+	// {
+	// 	title: "LexiGuess",
+	// 	description:
+	// 		"LexiGuess is an engaging word-guessing website with three game modes and customizable word settings. It offers educational word meanings in \"Hard Word\" mode.",
+	// 	tags: ["Next.js", "Tailwind CSS"],
+	// 	imageUrl: lexiguessImg,
+	// 	githubLink: "https://github.com/anirudh-makuluri/lexiguess",
+	// 	liveLink: "https://lexiguess.vercel.app/"
+	// },
+	// {
+	// 	title: "CodeCraft",
+	// 	description: "Real-time web design platform allowing direct HTML, CSS, and JS editing. Features seamless Shadcn and Tailwind CSS integration for responsive interfaces. Utilizes JWT for user authentication.",
+	// 	tags: ["Next.js", ".Net", "MSSQL"],
+	// 	imageUrl: codecraftImg,
+	// 	githubLink: "https://github.com/anirudh-makuluri/code-craft/",
+	// 	liveLink: null
+	// },
 	{
-		title: "Shardings Meet",
+		title: "Hoplio",
 		description:
-			"I worked as a full-stack developer on this startup project. Shardings-Meet offers customizable virtual environments for diverse virtual experiences.",
-		tags: ["React", "React Native", "Node.js", "Firebase", "WebRTC", "Google Cloud Platform"],
-		imageUrl: shardingsImg,
-		githubLink: null,
-		liveLink: "https://shardings.com/"
-	},
-	{
-		title: "LexiGuess",
-		description:
-			"LexiGuess is an engaging word-guessing website with three game modes and customizable word settings. It offers educational word meanings in \"Hard Word\" mode.",
-		tags: ["Next.js", "Tailwind CSS"],
-		imageUrl: lexiguessImg,
-		githubLink: "https://github.com/anirudh-makuluri/lexiguess",
-		liveLink: "https://lexiguess.vercel.app/"
-	},
-	{
-		title: "CodeCraft",
-		description: "Real-time web design platform allowing direct HTML, CSS, and JS editing. Features seamless Shadcn and Tailwind CSS integration for responsive interfaces. Utilizes JWT for user authentication.",
-		tags: ["Next.js", ".Net", "MSSQL"],
-		imageUrl: codecraftImg,
-		githubLink: "https://github.com/anirudh-makuluri/code-craft/",
-		liveLink: null
-	},
-	{
-		title: "Chatify",
-		description: "Chatify is a real-time chat application featuring one-to-one and group messaging, voice and video calls, Google OAuth secure authentication, and responsive design.",
-		tags: ["Next.js", "React", "React Native", "Node.js", "Firebase", "Socket.io", "WebRTC"],
+			"Secure real-time communication platform with one-to-one and group messaging, voice/video calls, offline-first sync, end-to-end encryption, and an AI assistant with semantic retrieval across mobile and web.",
+		tags: [
+			"Next.js",
+			"React",
+			"React Native",
+			"Node.js",
+			"Socket.IO",
+			"WebRTC",
+			"Redis",
+			"Firebase",
+			"End-to-End Encryption",
+			"Semantic Search"
+		],
 		imageUrl: chatifyImg,
 		githubLink: "https://github.com/anirudh-makuluri/chatify",
 		liveLink: "https://chat.smart-deploy.xyz/"
@@ -182,14 +311,14 @@ export const projectsData: readonly ProjectEntry[] = [
 			}
 		]
 	},
-	{
-		title: "E-Commerce App",
-		description: "Feature-rich e-commerce Android app using Java, showcasing strong object-oriented programming skills. Created an intuitive UI, implemented secure user authentication, and collaborated effectively with a team for planning and development.",
-		tags: ["Java", "Android Development", "Firebase"],
-		imageUrl: null,
-		githubLink: "https://github.com/anirudh-makuluri/ecommerce",
-		liveLink: null
-	},
+	// {
+	// 	title: "E-Commerce App",
+	// 	description: "Feature-rich e-commerce Android app using Java, showcasing strong object-oriented programming skills. Created an intuitive UI, implemented secure user authentication, and collaborated effectively with a team for planning and development.",
+	// 	tags: ["Java", "Android Development", "Firebase"],
+	// 	imageUrl: null,
+	// 	githubLink: "https://github.com/anirudh-makuluri/ecommerce",
+	// 	liveLink: null
+	// },
 ] as const;
 
 export const skillsData = [
@@ -233,61 +362,61 @@ export const skillsData = [
 	"Scikit-Learn",
 	"XGBoost",
 	"Graph Data Science"
-  ] as const;
-  
-  export const categorizedSkills = {
+] as const;
+
+export const categorizedSkills = {
 	Frontend: [
-	  "React.js",
-	  "Next.js",
-	  "TypeScript",
-	  "JavaScript",
-	  "Tailwind CSS",
-	  "Zustand",
-	  "TanStack Query",
-	  "Framer Motion"
+		"React.js",
+		"Next.js",
+		"TypeScript",
+		"JavaScript",
+		"Tailwind CSS",
+		"Zustand",
+		"TanStack Query",
+		"Framer Motion"
 	],
 	Mobile: [
-	  "React Native",
-	  "Expo",
-	  "CodePush",
-	  "Firebase Cloud Messaging",
-	  "Fastlane"
+		"React Native",
+		"Expo",
+		"CodePush",
+		"Firebase Cloud Messaging",
+		"Fastlane"
 	],
 	Backend: [
-	  "Node.js",
-	  ".Net",
-	  "C#",
-	  "Java",
-	  "Socket.IO",
-	  "WebRTC",
-	  "FastAPI"
+		"Node.js",
+		".Net",
+		"C#",
+		"Java",
+		"Socket.IO",
+		"WebRTC",
+		"FastAPI"
 	],
 	"Database & Cloud": [
-	  "Supabase",
-	  "Firebase",
-	  "Neo4j",
-	  "MSSQL",
-	  "PostgreSQL",
-	  "AWS (EC2, ECS, EBS)",
-	  "Google Cloud Platform",
-	  "Kubernetes",
-	  "Helm",
-	  "Docker"
+		"Supabase",
+		"Firebase",
+		"Neo4j",
+		"MSSQL",
+		"PostgreSQL",
+		"AWS (EC2, ECS, EBS)",
+		"Google Cloud Platform",
+		"Kubernetes",
+		"Helm",
+		"Docker"
 	],
 	"AI & Machine Learning": [
-	  "Gen AI",
-	  "Langchain",
-	  "CrewAI",
-	  "Ollama/Mistral",
-	  "sentence-transformers",
-	  "Tensorflow",
-	  "PyTorch Geometric",
-	  "Scikit-Learn",
-	  "XGBoost",
-	  "Graph Data Science"
+		"Gen AI",
+		"Langchain",
+		"CrewAI",
+		"Ollama/Mistral",
+		"sentence-transformers",
+		"Tensorflow",
+		"PyTorch Geometric",
+		"Scikit-Learn",
+		"XGBoost",
+		"Graph Data Science"
 	]
-  } as const;
-  
+} as const;
+
 
 
 export const certificatesData = [

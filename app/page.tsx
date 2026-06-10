@@ -1,10 +1,10 @@
 import { cacheLife, cacheTag } from "next/cache";
-import HomePage from "@/components/home-page";
+import HomePageV2 from "@/components/home-page-v2";
 
 export default async function Home() {
   "use cache";
   cacheLife("max");
   cacheTag("portfolio");
 
-  return <HomePage />;
+  return <HomePageV2 />;
 }
