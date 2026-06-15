@@ -156,6 +156,15 @@ export const recommendationsData: readonly RecommendationEntry[] = [
 		quote:
 			"Anirudh was a core member of the Shardings Meet team and consistently took ownership across multiple areas, from engineering the video player to building the Android and iOS applications. He is a versatile engineer with strong technical skills and the ability to work effectively across platforms. I would highly recommend Anirudh for any software engineering role.",
 	},
+	{
+		name: "Gaurav Yadav",
+		role: "Software Engineer @ Shardings",
+		relation: "Gaurav worked with Anirudh on the same team",
+		avatar: "/gaurav.jpg",
+		quote: 
+			"I worked closely with Anirudh at Shardings on the web side of Shardings Meet, and he was one of the easiest engineers to collaborate with. We worked through backend changes, deployment issues, and last-minute production bugs together, and he always brought a calm, practical mindset to the problem. " + 
+			"What I appreciated most was that Anirudh never treated issues as “someone else’s area.” He would jump in, trace problems end to end, and help get things moving again. He was technically strong, reliable under pressure, and genuinely a joy to work with. I would happily recommend him for any software engineering role."
+	}
 ] as const;
 
 export const educationData: readonly EducationEntry[] = [

@@ -102,8 +102,8 @@ export default function LiveLocation() {
         <span>Live · {LOCATION_LABEL}</span>
       </div>
       <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 pl-[14px] text-slate-700 dark:text-slate-300">
-        <span className="tabular-nums">33.4°N 111.9°W</span>
-        <span className="text-slate-400 dark:text-slate-600">/</span>
+        {/* <span className="tabular-nums">33.4°N 111.9°W</span> */}
+        {/* <span className="text-slate-400 dark:text-slate-600">/</span> */}
         <span className="tabular-nums">{time} MST</span>
         {weather && (
           <>
