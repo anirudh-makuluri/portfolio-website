@@ -108,7 +108,7 @@ export const workExperienceData: readonly WorkEntry[] = [
 		summary:
 			"Built and scaled production collaboration features across web, mobile, backend, and cloud infrastructure for a 12K+ user platform.",
 		highlights: [
-			"Co-led platform scaling from VM-based deployments to GKE, improving reliability for web, backend, and real-time media services",
+			"Redesigned real-time session synchronization for stateless servers, preventing context loss for late-joining users by replaying chat messages, polls, files, and shared meeting context from Redis-backed state.",
 			"Owned Node.js APIs and WebSocket systems powering meetings, messaging, session sync, payments, and live collaboration workflows",
 			"Shipped AI meeting summaries, CDN performance improvements, and mobile/web release workflows that improved product reliability and user experience",
 		],
